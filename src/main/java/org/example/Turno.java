@@ -21,4 +21,12 @@ public class Turno {
     public void cambiaTurno(){
         juega=calculaSiguienteJugador();
     }
+
+    public char letraJugarorConTurno(){
+        return jugadores[juega].getLetraficha();
+    }
+
+    public String nombreJugadorConTurno(){
+        return jugadores[juega].getNombre();
+    }
 }
