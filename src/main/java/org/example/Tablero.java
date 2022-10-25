@@ -90,7 +90,7 @@ public class Tablero {
         return !estaLibre(0,columna);
     }
 
-    private void ponerFicha(Ficha ficha,String jugador, Scanner scanner){
+    public void ponerFicha(Ficha ficha,String jugador, Scanner scanner){
         int columnaElegida=-1;
         int filaFicha;
         boolean llena=false;
