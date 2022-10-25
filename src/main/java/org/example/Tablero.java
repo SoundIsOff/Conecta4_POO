@@ -72,5 +72,8 @@ public class Tablero {
         this.dibujarBorde();
     }
 
+    public boolean estaLibre(int fila,int columna){
+        return casillas[fila][columna].isVacia();
+    }
 
 }
