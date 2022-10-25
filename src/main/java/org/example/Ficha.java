@@ -10,4 +10,12 @@ public class Ficha {
     public char getContenido() {
         return contenido;
     }
+
+    public Ficha(){
+        contenido=' ';
+    }
+
+    public String dibujar(){
+        return " "+contenido+" ";
+    }
 }
