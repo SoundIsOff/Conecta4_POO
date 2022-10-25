@@ -112,4 +112,11 @@ public class Tablero {
         return columnaElegida-1;
     }
 
+    private void ponerFicha(Ficha ficha){
+        int columnaFicha=eleccionColumna();
+        int filaFicha=filaFicha(columnaFicha);
+
+        casillas[filaFicha][columnaFicha].setFicha(ficha);
+    }
+
 }
