@@ -6,13 +6,13 @@ public class Casillas {
     private final int columna;
     private final String CASILLAVACIA="   ";
 
-    public Casillas(Ficha ficha, int fila, int columna) {
-        this.ficha = ficha;
+    public Casillas(int fila, int columna) {
         this.fila = fila;
         this.columna = columna;
     }
 
-    public Casillas(int fila, int columna) {
+    public Casillas(Ficha ficha, int fila, int columna) {
+        this.ficha = ficha;
         this.fila = fila;
         this.columna = columna;
     }

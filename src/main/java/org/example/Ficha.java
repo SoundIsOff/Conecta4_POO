@@ -3,8 +3,8 @@ package org.example;
 public class Ficha {
     private final char contenido;
 
-    public Ficha(char contenido) {
-        this.contenido = contenido;
+    public Ficha(char caracter) {
+        this.contenido = caracter;
     }
 
     public char getContenido() {

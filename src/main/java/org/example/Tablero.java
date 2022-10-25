@@ -10,13 +10,12 @@ public class Tablero {
 
     private final int INICIO=0;
     private final String CADENASEPARADORA="_____________________________";
-    private final String TEXTOCABECERA="--- CONECTA 4 ---";
     private final String SEPARADORCOLUMNA="|";
 
     public Tablero(int numfilas, int numcolumnas) {
-        this.casillas = new Casillas[this.numfilas][this.numcolumnas];
         this.numfilas = numfilas;
         this.numcolumnas = numcolumnas;
+        this.casillas = new Casillas[this.numfilas][this.numcolumnas];
         inicializarTablero();
     }
 
@@ -38,11 +37,8 @@ public class Tablero {
             }
         }
     }
-    private void dibujarCabecera(){
-        System.out.println(this.TEXTOCABECERA);
-    }
 
-    private void dibujaSeparadorColumna(){
+    private void dibujarSeparadorColumna(){
         int indice;
         for(indice=INICIO;indice<this.numcolumnas;indice++){
             System.out.println(this.SEPARADORCOLUMNA);
@@ -64,7 +60,6 @@ public class Tablero {
     public void dibujar(){
         int fila;
         int columna;
-        this.dibujarCabecera();
         this.dibujarBorde();
         for(fila=INICIO;fila<this.numfilas;fila++){
             for(columna=INICIO;columna<this.numcolumnas;columna++){
