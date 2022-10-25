@@ -17,4 +17,8 @@ public class Turno {
     private int calculaSiguienteJugador(){
         return (juega+1)%jugadores.length;
     }
+
+    public void cambiaTurno(){
+        juega=calculaSiguienteJugador();
+    }
 }
