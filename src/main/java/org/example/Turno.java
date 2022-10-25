@@ -10,5 +10,11 @@ public class Turno {
         this.jugadores = jugadores;
     }
 
+    public Jugador tieneturno(){
+        return jugadores[juega];
+    }
 
+    private int calculaSiguienteJugador(){
+        return (juega+1)%jugadores.length;
+    }
 }
