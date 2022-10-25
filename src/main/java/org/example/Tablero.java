@@ -76,4 +76,18 @@ public class Tablero {
         return casillas[fila][columna].isVacia();
     }
 
+    private int filaFicha(int columna){
+        int posicion=0;
+        int fila=numfilas-1;
+
+        for(int i=0;i<=fila;i++){
+            if(casillas[i][columna].isVacia()){
+                posicion=i;
+            }
+        }
+        return posicion;
+    }
+
+
+
 }
