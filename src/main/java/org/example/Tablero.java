@@ -88,6 +88,8 @@ public class Tablero {
         return posicion;
     }
 
-
+    private boolean columnaLlena(int columna){
+        return !estaLibre(0,columna);
+    }
 
 }
