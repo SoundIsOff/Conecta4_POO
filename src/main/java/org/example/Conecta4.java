@@ -10,7 +10,7 @@ public class Conecta4 {
 
     public Conecta4(Jugador[] jugadores) {
         this.jugadores = jugadores;
-        this.tablero = tablero;
+        this.tablero = new Tablero(6,7);
         this.turno = new Turno(this.jugadores);
         actualizaTableroEnJugadores(this.tablero);
     }
@@ -43,8 +43,8 @@ public class Conecta4 {
     }
 
     public static void main(String[] args){
-        Jugador jugador1=new Jugador("Jugador1", "R");
-        Jugador jugador2=new Jugador("Jugador2", "B");
+        Jugador jugador1=new Jugador("Jugador1", 'R');
+        Jugador jugador2=new Jugador("Jugador2", 'B');
         System.out.println(BIENVENIDA);
         Jugador[] jugadores=new Jugador[]{jugador1,jugador2};
         Conecta4 conecta4=new Conecta4(jugadores);

@@ -38,6 +38,19 @@ public class Tablero {
         }
     }
 
+    public void dibujar(){
+        int fila;
+        int columna;
+        this.dibujarBorde();
+        for(fila=INICIO;fila<this.numfilas;fila++){
+            for(columna=INICIO;columna<this.numcolumnas;columna++){
+                dibujaContenidoCasilla(casillas[fila][columna].dibujar());
+            }
+            dibujarFinDeFila();
+        }
+        this.dibujarBorde();
+    }
+
     private void dibujarSeparadorColumna(){
         int indice;
         for(indice=INICIO;indice<this.numcolumnas;indice++){
@@ -55,19 +68,6 @@ public class Tablero {
 
     public void dibujarFinDeFila(){
         System.out.println(this.SEPARADORCOLUMNA);
-    }
-
-    public void dibujar(){
-        int fila;
-        int columna;
-        this.dibujarBorde();
-        for(fila=INICIO;fila<this.numfilas;fila++){
-            for(columna=INICIO;columna<this.numcolumnas;columna++){
-                dibujaContenidoCasilla(casillas[fila][columna].dibujar());
-            }
-            dibujarFinDeFila();
-        }
-        this.dibujarBorde();
     }
 
     public boolean estaLibre(int fila,int columna){

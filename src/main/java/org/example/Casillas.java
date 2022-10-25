@@ -7,6 +7,7 @@ public class Casillas {
     private final String CASILLAVACIA="   ";
 
     public Casillas(int fila, int columna) {
+        this.ficha=null;
         this.fila = fila;
         this.columna = columna;
     }
@@ -37,7 +38,7 @@ public class Casillas {
         return ficha==null;
     }
 
-    public String dibujar{
+    public String dibujar(){
         if(isVacia()){
             return CASILLAVACIA;
         }else{

@@ -6,15 +6,16 @@ public class Jugador {
     private Tablero tablero;
     private String nombre;
 
-    public Jugador(char letraficha, Tablero tablero, String nombre) {
+    public Jugador(String nombre,char letraficha, Tablero tablero) {
+        this.nombre = nombre;
         this.letraficha = letraficha;
         this.tablero = tablero;
-        this.nombre = nombre;
     }
 
-    public Jugador(String letraficha, String nombre) {
-        this.letraficha = letraficha;
+    public Jugador(String nombre,char letra) {
         this.nombre = nombre;
+        this.letraficha = letra;
+        this.tablero=null;
     }
 
     public char getLetraficha() {
