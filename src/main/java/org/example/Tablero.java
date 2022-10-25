@@ -119,4 +119,20 @@ public class Tablero {
         casillas[filaFicha][columnaFicha].setFicha(ficha);
     }
 
+    public boolean tableroLleno(){
+        boolean lleno = true;
+        int fila = INICIO;
+        int columna;
+
+        do{
+            columna=INICIO;
+            do{
+                lleno = !casillas[fila][columna].isVacia();
+                columna++;
+            }while((lleno)&&columna<this.numcolumnas);
+            fila++;
+        }while((lleno)&&(fila<this.numfilas));
+        return lleno;
+    }
+
 }
