@@ -1,4 +1,7 @@
 package org.example;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 
 public class Tablero {
     private Casillas[][] casillas;
@@ -90,6 +93,23 @@ public class Tablero {
 
     private boolean columnaLlena(int columna){
         return !estaLibre(0,columna);
+    }
+
+    private int eleccionColumna(){
+        int columnaElegida;
+        Scanner scanner = new Scanner(System.in);
+
+        do{
+            System.out.println("Introduzca la columna (1-7): ");
+            columnaElegida = scanner.nextInt();
+            if(columnaElegida<7||columnaElegida<1){
+                System.out.println("Valor inválido.");
+            }
+            if(columnaLlena(columnaElegida)){
+                System.out.println("La columna está llena.");
+            }
+        }while(columnaElegida>7||columnaElegida<1||columnaLlena(columnaElegida));
+        return columnaElegida-1;
     }
 
 }
