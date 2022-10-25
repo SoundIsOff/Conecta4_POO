@@ -36,4 +36,12 @@ public class Jugador {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public void poner(String jugador){
+        Scanner scanner = new Scanner(System.in);
+        int fila;
+        int columna;
+        Ficha mificha = new Ficha(this.letraficha);
+        this.tablero.ponerFicha(mificha,jugador,scanner);
+    }
 }

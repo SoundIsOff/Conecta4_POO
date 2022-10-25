@@ -90,28 +90,27 @@ public class Tablero {
         return !estaLibre(0,columna);
     }
 
-    private int eleccionColumna(){
-        int columnaElegida;
-        Scanner scanner = new Scanner(System.in);
+    private void ponerFicha(Ficha ficha,String jugador, Scanner scanner){
+        int columnaElegida=-1;
+        int filaFicha;
+        boolean llena=false;
 
         do{
-            System.out.println("Introduzca la columna (1-7): ");
-            columnaElegida = scanner.nextInt();
-            if(columnaElegida<7||columnaElegida<1){
-                System.out.println("Valor inválido.");
+            System.out.println(jugador +" Introduzca la columna (1-7): ");
+            columnaElegida=scanner.nextInt();
+            if(columnaElegida>7||columnaElegida<1){
+                System.out.println("Valor invalido.");
+            }else{
+                llena=columnaLlena(columnaElegida-1);
+                if(llena){
+                    System.out.println("La columna esta llena.");
+                }else{
+                    filaFicha=filaFicha(columnaElegida-1);
+                    casillas[filaFicha][columnaElegida-1].setFicha(ficha);
+                }
             }
-            if(columnaLlena(columnaElegida)){
-                System.out.println("La columna está llena.");
-            }
-        }while(columnaElegida>7||columnaElegida<1||columnaLlena(columnaElegida));
-        return columnaElegida-1;
-    }
+        }while(columnaElegida>(numcolumnas)||columnaElegida<1||llena);
 
-    private void ponerFicha(Ficha ficha){
-        int columnaFicha=eleccionColumna();
-        int filaFicha=filaFicha(columnaFicha);
-
-        casillas[filaFicha][columnaFicha].setFicha(ficha);
     }
 
     public boolean tableroLleno(){
