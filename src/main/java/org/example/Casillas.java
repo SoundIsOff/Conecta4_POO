@@ -32,4 +32,16 @@ public class Casillas {
     public int getColumna() {
         return columna;
     }
+
+    public boolean isVacia(){
+        return ficha==null;
+    }
+
+    public String dibujar{
+        if(isVacia()){
+            return CASILLAVACIA;
+        }else{
+            return getFicha().dibujar();
+        }
+    }
 }
