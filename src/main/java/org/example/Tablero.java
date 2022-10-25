@@ -14,6 +14,7 @@ public class Tablero {
         this.casillas = new Casillas[this.numfilas][this.numcolumnas];
         this.numfilas = numfilas;
         this.numcolumnas = numcolumnas;
+        inicializarTablero();
     }
 
     public int getNumfilas() {
@@ -23,4 +24,17 @@ public class Tablero {
     public int getNumcolumnas() {
         return numcolumnas;
     }
+
+    private void inicializarTablero(){
+        int fila;
+        int columna;
+
+        for(fila=INICIO;fila<this.numfilas;fila++){
+            for(columna=INICIO;columna<this.numcolumnas;columna++){
+                casillas[fila][columna]=new Casillas(fila,columna);
+            }
+        }
+    }
+
+
 }
