@@ -35,7 +35,6 @@ public class Tablero {
             }
         }
     }
-
     private void dibujarCabecera(){
         System.out.println(this.TEXTOCABECERA);
     }
