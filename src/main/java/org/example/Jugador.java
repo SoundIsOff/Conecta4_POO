@@ -12,7 +12,7 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public Jugador(char letraficha, String nombre) {
+    public Jugador(String letraficha, String nombre) {
         this.letraficha = letraficha;
         this.nombre = nombre;
     }

@@ -41,4 +41,14 @@ public class Conecta4 {
         }while(!finPartida());
         System.out.println("Fin de partida");
     }
+
+    public static void main(String[] args){
+        Jugador jugador1=new Jugador("Jugador1", "R");
+        Jugador jugador2=new Jugador("Jugador2", "B");
+        System.out.println(BIENVENIDA);
+        Jugador[] jugadores=new Jugador[]{jugador1,jugador2};
+        Conecta4 conecta4=new Conecta4(jugadores);
+        conecta4.jugar();
+
+    }
 }
