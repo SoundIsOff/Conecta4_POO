@@ -30,7 +30,7 @@ public class Conecta4
             tablero.dibujar();
             juega = cambiarTurno();
         } while (!finPartida());
-        System.out.printf("Fin de la partida.");
+        System.out.println("Fin de la partida.");
     }
 
     private Jugador cambiarTurno () {
@@ -43,8 +43,8 @@ public class Conecta4
     }
 
     public static void main( String[] args ) {
-        Jugador jugador1 = new Jugador( "jugador1", 'R');
-        Jugador jugador2 = new Jugador("jugador2",'B');
+        Jugador jugador1 = new Jugador( "Turno: RED", 'R');
+        Jugador jugador2 = new Jugador("Turno: YELLOW",'Y');
         System.out.println (BIENVENIDA);
         Jugador[] jugadores = new Jugador[] {jugador1, jugador2};
         Conecta4 conecta4 = new Conecta4(jugadores);

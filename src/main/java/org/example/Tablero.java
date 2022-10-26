@@ -45,7 +45,6 @@ public class Tablero {
         this.dibujarBorde();
         for (fila = INICIO; fila < this.numfilas; fila++) {
             for (columna = INICIO; columna < this.numcolumnas; columna++) {
-
                 dibujaContenidoCasilla(casillas[fila][columna].dibujarCasillas());
             }
             dibujaFindeFila();
@@ -65,7 +64,6 @@ public class Tablero {
     }
 
     private void dibujaContenidoCasilla(String contenido) {
-
         System.out.print(this.SEPARADORCOLUMNA + contenido);
     }
 
@@ -95,7 +93,7 @@ public class Tablero {
         int filaFicha;
         boolean llena = false;
         do {
-            System.out.println(jugador+" Introduzca la columna (1-7): ");
+            System.out.println(jugador+"\nIntroduzca la columna (1-7): ");
             columnaElegida = scanner.nextInt();
             if (columnaElegida > 7 || columnaElegida < 1)
                 System.out.println("Valor invalido.");

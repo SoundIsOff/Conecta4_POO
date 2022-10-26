@@ -41,11 +41,7 @@ public class Jugador {
     }
     public void poner(String jugador) {
         Scanner scanner = new Scanner(System.in);
-        int fila;
-        int columna;
-        //do {
         Ficha mificha = new Ficha(this.letraficha);
-        this.tablero.ponerFicha(  mificha, jugador, scanner);
-        // } while (this.tablero.tableroLleno());
+        this.tablero.ponerFicha(mificha, jugador, scanner);
     }
 }
