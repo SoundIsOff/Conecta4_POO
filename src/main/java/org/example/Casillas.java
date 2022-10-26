@@ -1,13 +1,14 @@
 package org.example;
 import java.awt.*;
+
 public class Casillas {
     private Ficha ficha;
     private final int fila;
     private final int columna;
-    private final String CASILLAVACIA="   ";
+    private final String CASILLAVACIA = "   ";
 
     public Casillas(int fila, int columna) {
-        this.ficha=null;
+        this.ficha = null;
         this.fila = fila;
         this.columna = columna;
     }
@@ -34,15 +35,16 @@ public class Casillas {
         return columna;
     }
 
-    public boolean isVacia(){
+    public boolean isVacia() {
         return ficha==null;
     }
 
-    public String dibujar(){
-        if(isVacia()){
+    public String dibujarCasillas() {
+        if (isVacia()) {
             return CASILLAVACIA;
-        }else{
-            return getFicha().dibujar();
+        } else {
+            return getFicha().dibujarFicha();
         }
     }
 }
+
