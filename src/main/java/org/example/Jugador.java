@@ -36,9 +36,9 @@ public class Jugador {
 
     //Crea la ficha y la asigna al tablero
     //Método para poner una ficha en una casilla del tablero
-    public void poner(String jugador) {
+    public void poner(String nombreJugador) {
         Scanner scanner = new Scanner(System.in);
         Ficha mificha = new Ficha(this.letraficha);
-        this.tablero.ponerFicha(mificha, jugador, scanner);
+        this.tablero.ponerFicha(mificha, nombreJugador, scanner);
     }
 }

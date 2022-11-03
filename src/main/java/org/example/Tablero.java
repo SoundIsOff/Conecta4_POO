@@ -93,13 +93,13 @@ public class Tablero {
     //Método que solicita al jugador una columna
     //Comprueba que el valor no sea inválido y que la columna no esté llena
     //Coloca la ficha
-    public void ponerFicha(Ficha ficha, String jugador,Scanner scanner) {
-        int columnaElegida= -1;
+    public void ponerFicha(Ficha ficha, String nombreJugador,Scanner scanner) {
+        int columnaElegida;
         int filaFicha;
         boolean llena = false;
         boolean correcto = false;
         do {
-            System.out.println(jugador+"\nIntroduzca la columna (1-7): ");
+            System.out.println(nombreJugador+"\nIntroduzca la columna (1-7): ");
             try {
                 columnaElegida = scanner.nextInt();
                 if (columnaElegida > 7 || columnaElegida < 1)
@@ -118,7 +118,7 @@ public class Tablero {
                 }
             }
             catch (InputMismatchException exception) {
-                System.out.println ("Jugador " + jugador + ", valor no válido, se pide un valor entero");
+                System.out.println ("Jugador " + nombreJugador + ", valor no válido, se pide un valor entero");
                 scanner.next();
             }
         } while ( !correcto || llena);
