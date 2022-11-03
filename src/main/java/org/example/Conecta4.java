@@ -9,6 +9,8 @@ public class Conecta4
     private final int INICIOBUCLE = 0;
     private static final String BIENVENIDA = "--- CONECTA 4 ---";
 
+    //Constructor de la calse en el que se define el tamaño del tablero
+    //Necesita el vector con los dos jugadores que van a jugar
     public Conecta4(Jugador[] jugadores) {
         this.jugadores = jugadores;
         this.tablero = new Tablero(6, 7);
@@ -16,12 +18,15 @@ public class Conecta4
         actualizaTableroEnJugadores(this.tablero);
     }
 
+    //Método que actualiza el tablero para que ambos jugadores puedan colocar fichas
     private void actualizaTableroEnJugadores (Tablero tablero) {
         for (int indice = INICIOBUCLE; indice < NUMJUGADORES; indice++) {
             jugadores[indice].setTablero(tablero);
         }
     }
 
+    //Método que gestiona el desarrollo de una partida
+    //El juego termina cuando el tablero está lleno
     public void jugar() {
         Jugador juega = turno.tieneTurno();
         tablero.dibujar();

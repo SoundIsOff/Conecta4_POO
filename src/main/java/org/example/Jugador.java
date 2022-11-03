@@ -1,19 +1,12 @@
 package org.example;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class Jugador {
     private final char letraficha;
     private Tablero tablero;
     private String nombre;
 
-
-    public Jugador( String nombre, char letraficha, Tablero tablero) {
-        this.nombre = nombre;
-        this.letraficha = letraficha;
-        this.tablero = tablero;
-    }
     public Jugador(String nombre, char letra) {
         this.nombre = nombre;
         this.letraficha = letra;
@@ -39,6 +32,9 @@ public class Jugador {
     public void setTablero(Tablero tablero) {
         this.tablero = tablero;
     }
+
+    //Crea la ficha y la asigna al tablero
+    //Método para poner una ficha en una casilla del tablero
     public void poner(String jugador) {
         Scanner scanner = new Scanner(System.in);
         Ficha mificha = new Ficha(this.letraficha);

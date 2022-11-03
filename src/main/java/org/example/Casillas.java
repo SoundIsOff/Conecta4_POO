@@ -13,12 +13,6 @@ public class Casillas {
         this.columna = columna;
     }
 
-    public Casillas(Ficha ficha, int fila, int columna) {
-        this.ficha = ficha;
-        this.fila = fila;
-        this.columna = columna;
-    }
-
     public Ficha getFicha() {
         return ficha;
     }
@@ -39,6 +33,7 @@ public class Casillas {
         return ficha==null;
     }
 
+    //Método que devuelve la representación de una casilla
     public String dibujarCasillas() {
         if (isVacia()) {
             return CASILLAVACIA;

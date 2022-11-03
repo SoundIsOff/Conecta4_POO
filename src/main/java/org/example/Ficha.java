@@ -15,6 +15,7 @@ public class Ficha {
         contenido = ' ';
     }
 
+    //Método que devuelve la representación de una ficha
     public String dibujarFicha () {
         return " " + contenido + " ";
     }

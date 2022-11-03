@@ -21,6 +21,7 @@ public class Tablero {
         return numcolumnas;
     }
 
+    //Constructor del tablero basado en el número de filas y columnas
     public Tablero(int numfilas, int numcolumnas) {
         this.numfilas = numfilas;
         this.numcolumnas = numcolumnas;
@@ -28,6 +29,7 @@ public class Tablero {
         inicializarTablero();
     }
 
+    //Método que crea un tablero vacío con tantas casillas como necesite el tablero
     private void inicializarTablero() {
         int fila;
         int columna;
@@ -39,6 +41,8 @@ public class Tablero {
         }
     }
 
+    //Método que se encarga de dibujar un tablero
+    // Cada columna está separada por el caracter "|"
     public void dibujar() {
         int fila;
         int columna;
@@ -52,13 +56,7 @@ public class Tablero {
         this.dibujarBorde();
     }
 
-    private void dibujaSeparadorColumna() {
-        int indice;
-        for (indice = INICIO; indice < this.numcolumnas; indice++) {
-            System.out.print(this.SEPARADORCOLUMNA);
-        }
-    }
-
+    //Método que dibuja una línea horizontal
     private void dibujarBorde() {
         System.out.println(this.CADENASEPARADORA);
     }
@@ -67,14 +65,17 @@ public class Tablero {
         System.out.print(this.SEPARADORCOLUMNA + contenido);
     }
 
+    //Método que escribe el caracter "|" al final de cada fila
     private void dibujaFindeFila() {
         System.out.println(this.SEPARADORCOLUMNA);
     }
 
+    //Método que comprueba si una casilla está libre
     public boolean estaLibre(int fila, int columna) {
         return casillas[fila][columna].isVacia();
     }
 
+    //Método que recibe una columna y devuelve la posición de la primera fila vacía de dicha columna
     private int filaFicha(int columna) {
         int posicion = 0;
         int fila = numfilas - 1;
@@ -84,10 +85,14 @@ public class Tablero {
         return posicion;
     }
 
+    //Método que recibiendo una columna comprueba si la fila de arriba está ocupada
     private boolean columnaLlena(int columna) {
         return !estaLibre(0, columna);
     }
 
+    //Método que solicita al jugador una columna
+    //Comprueba que el valor no sea inválido y que la columna no esté llena
+    //Coloca la ficha
     public void ponerFicha(Ficha ficha, String jugador,Scanner scanner) {
         int columnaElegida= -1;
         int filaFicha;
@@ -111,6 +116,7 @@ public class Tablero {
         } while (columnaElegida > (numcolumnas) || columnaElegida < 1 || llena);
     }
 
+    //Método que comprueba que todas las columna están llenas
     public boolean tableroLleno() {
         boolean lleno = true;
         int fila = INICIO;
