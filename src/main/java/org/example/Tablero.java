@@ -97,23 +97,31 @@ public class Tablero {
         int columnaElegida= -1;
         int filaFicha;
         boolean llena = false;
+        boolean correcto = false;
         do {
             System.out.println(jugador+"\nIntroduzca la columna (1-7): ");
-            columnaElegida = scanner.nextInt();
-            if (columnaElegida > 7 || columnaElegida < 1)
-                System.out.println("Valor invalido.");
-            else{
-                llena = columnaLlena(columnaElegida-1);
-                if (llena){
-                    System.out.println("La columna esta llena.");
+            try {
+                columnaElegida = scanner.nextInt();
+                if (columnaElegida > 7 || columnaElegida < 1)
+                    System.out.println("Valor invalido.");
+                else{
+                    llena = columnaLlena(columnaElegida-1);
+                    if (llena){
+                        System.out.println("La columna esta llena.");
 
-                }
-                else {
-                    filaFicha = filaFicha(columnaElegida-1);
-                    casillas[filaFicha][columnaElegida-1 ].setFicha(ficha);
+                    }
+                    else {
+                        correcto = true;
+                        filaFicha = filaFicha(columnaElegida-1);
+                        casillas[filaFicha][columnaElegida-1 ].setFicha(ficha);
+                    }
                 }
             }
-        } while (columnaElegida > (numcolumnas) || columnaElegida < 1 || llena);
+            catch (InputMismatchException exception) {
+                System.out.println ("Jugador " + jugador + ", valor no válido, se pide un valor entero");
+                scanner.next();
+            }
+        } while ( !correcto || llena);
     }
 
     //Método que comprueba que todas las columna están llenas
