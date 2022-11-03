@@ -7,6 +7,7 @@ public class Jugador {
     private Tablero tablero;
     private String nombre;
 
+    //Constructor que crea un jugador
     public Jugador(String nombre, char letra) {
         this.nombre = nombre;
         this.letraficha = letra;

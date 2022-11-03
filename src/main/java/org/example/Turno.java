@@ -5,6 +5,7 @@ public class Turno {
     private static final int JUGADORINICIAL = 0;
     private int juega;
 
+    //Contructor que recibe la lista de jugadores entre los cuales repartir el turno
     public Turno (Jugador[] jugadores) {
         this.juega = JUGADORINICIAL;
         this.jugadores = jugadores;

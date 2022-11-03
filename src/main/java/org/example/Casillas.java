@@ -29,6 +29,7 @@ public class Casillas {
         return columna;
     }
 
+    //Método que devuelvuelve si la casilla está ocupada
     public boolean isVacia() {
         return ficha==null;
     }
