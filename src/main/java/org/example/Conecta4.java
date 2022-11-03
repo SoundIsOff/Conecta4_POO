@@ -9,7 +9,7 @@ public class Conecta4
     private final int INICIOBUCLE = 0;
     private static final String BIENVENIDA = "--- CONECTA 4 ---";
 
-    //Constructor de la calse en el que se define el tamaño del tablero
+    //Constructor de la clase en el que se define el tamaño del tablero
     //Necesita el vector con los dos jugadores que van a jugar
     public Conecta4(Jugador[] jugadores) {
         this.jugadores = jugadores;
