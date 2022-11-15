@@ -1,5 +1,4 @@
 package org.example;
-import java.awt.*;
 
 public class Casillas {
     private Ficha ficha;

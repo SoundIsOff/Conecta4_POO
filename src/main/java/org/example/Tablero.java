@@ -126,7 +126,7 @@ public class Tablero {
 
     //Método que comprueba que todas las columna están llenas
     public boolean tableroLleno() {
-        boolean lleno = true;
+        boolean lleno=true;
         int fila = INICIO;
         int columna;
         do {
@@ -136,7 +136,7 @@ public class Tablero {
                 columna++;
             } while ((lleno) && columna < this.numcolumnas);
             fila++;
-        } while ((lleno) && (fila < this.numfilas));
+        } while (lleno && (fila < this.numfilas));
         return lleno;
     }
 }
