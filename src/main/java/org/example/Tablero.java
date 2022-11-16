@@ -166,5 +166,24 @@ public class Tablero {
         return encontrado;
     }
 
-
+    public boolean compruebaDiagonal(char caracter){
+        boolean encontrado=false;
+        for(int i=0;i<numcolumnas-4+1;i++){
+            for(int j=0;j<numfilas-4+1;j++){
+                if(casillas[i][j].equals(caracter)&&casillas[i+1][j+1].equals(caracter)&&
+                        casillas[i+2][j+2].equals(caracter)&&casillas[i+3][j+3].equals(caracter)){
+                    encontrado=true;
+                }
+            }
+        }
+        for(int i=numcolumnas;i>3;i--){
+            for(int j=0;j<numfilas-3;j++){
+                if(casillas[j][i-1].equals(caracter)&&casillas[j+1][i-2].equals(caracter)&&
+                        casillas[j+2][i-3].equals(caracter)&&casillas[j+3][i-4].equals(caracter)){
+                    encontrado=true;
+                }
+            }
+        }
+        return encontrado;
+    }
 }
