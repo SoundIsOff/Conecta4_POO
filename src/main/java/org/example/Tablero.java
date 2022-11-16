@@ -160,8 +160,8 @@ public class Tablero {
         boolean encontrado=false;
         for(int i=0;i<numcolumnas;i++){
             for(int j=0;j<numfilas-3;j++){
-                if(casillas[j][i].equals(caracter)&&casillas[j+1][i].equals(caracter)&&
-                        casillas[j+2][i].equals(caracter)&&casillas[j+3][i].equals(caracter)){
+                if(casillas[j][i].getFicha().getContenido()==caracter&&casillas[j+1][i].getFicha().getContenido()==caracter&&
+                        casillas[j+2][i].getFicha().getContenido()==caracter&&casillas[j+3][i].getFicha().getContenido()==caracter){
                     encontrado=true;
                 }
             }
