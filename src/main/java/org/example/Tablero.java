@@ -153,5 +153,18 @@ public class Tablero {
         return encontrado;
     }
 
+    public boolean compruebaVertical(char caracter){
+        boolean encontrado=false;
+        for(int i=0;i<numcolumnas;i++){
+            for(int j=0;j<numfilas-3;j++){
+                if(casillas[j][i].equals(caracter)&&casillas[j+1][i].equals(caracter)&&
+                        casillas[j+2][i].equals(caracter)&&casillas[j+3][i].equals(caracter)){
+                    encontrado=true;
+                }
+            }
+        }
+        return encontrado;
+    }
+
 
 }
