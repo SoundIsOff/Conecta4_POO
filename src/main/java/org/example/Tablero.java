@@ -1,6 +1,7 @@
 package org.example;
 
 
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -116,6 +117,8 @@ public class Tablero {
                         casillas[filaFicha][columnaElegida-1 ].setFicha(ficha);
                     }
                 }
+                System.out.println(                ficha.getContenido()
+                );
             }
             catch (InputMismatchException exception) {
                 System.out.println ("Jugador " + jugador + ", valor no válido, se pide un valor entero");
@@ -144,8 +147,8 @@ public class Tablero {
         boolean encontrado=false;
         for(int i=0;i<numfilas;i++){
             for(int j=0;j<numcolumnas-3;j++){
-                if(casillas[i][j].equals(caracter)&&casillas[i][j+1].equals(caracter)&&
-                        casillas[i][j+2].equals(caracter)&&casillas[i][j+3].equals(caracter)){
+                if(casillas[i][j].getFicha().getContenido()==caracter&&casillas[i][j+1].getFicha().getContenido()==caracter&&
+                        casillas[i][j+2].getFicha().getContenido()==caracter&&casillas[i][j+3].getFicha().getContenido()==caracter){
                     encontrado=true;
                 }
             }
@@ -188,6 +191,6 @@ public class Tablero {
     }
 
     public boolean compruebaGanador(char caracter){
-        return compruebaHorizontal(caracter) || compruebaDiagonal(caracter) || compruebaHorizontal(caracter);
+        return compruebaHorizontal(caracter) || compruebaDiagonal(caracter) || compruebaVertical(caracter);
     }
 }
