@@ -173,8 +173,8 @@ public class Tablero {
         boolean encontrado=false;
         for(int i=0;i<numcolumnas-4+1;i++){
             for(int j=0;j<numfilas-4+1;j++){
-                if(casillas[i][j].getFicha().getContenido()==caracter&&casillas[i+1][j+1].getFicha().getContenido()==caracter&&
-                        casillas[i+2][j+2].getFicha().getContenido()==caracter&&casillas[i+3][j+3].getFicha().getContenido()==caracter){
+                if(casillas[j][i].getFicha().getContenido()==caracter&&casillas[j+1][i+1].getFicha().getContenido()==caracter&&
+                        casillas[j+2][i+2].getFicha().getContenido()==caracter&&casillas[j+3][i+3].getFicha().getContenido()==caracter){
                     encontrado=true;
                 }
             }
