@@ -186,4 +186,8 @@ public class Tablero {
         }
         return encontrado;
     }
+
+    public boolean compruebaGanador(char caracter){
+        return compruebaHorizontal(caracter) || compruebaDiagonal(caracter) || compruebaHorizontal(caracter);
+    }
 }
