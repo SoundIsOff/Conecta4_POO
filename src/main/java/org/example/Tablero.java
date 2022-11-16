@@ -139,4 +139,19 @@ public class Tablero {
         } while ((lleno) && (fila < this.numfilas));
         return lleno;
     }
+
+    public boolean compruebaHorizontal(char caracter){
+        boolean encontrado=false;
+        for(int i=0;i<numfilas;i++){
+            for(int j=0;j<numcolumnas-3;j++){
+                if(casillas[i][j].equals(caracter)&&casillas[i][j+1].equals(caracter)&&
+                        casillas[i][j+2].equals(caracter)&&casillas[i][j+3].equals(caracter)){
+                    encontrado=true;
+                }
+            }
+        }
+        return encontrado;
+    }
+
+
 }
