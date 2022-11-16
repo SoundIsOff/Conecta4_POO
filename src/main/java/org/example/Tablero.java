@@ -117,8 +117,6 @@ public class Tablero {
                         casillas[filaFicha][columnaElegida-1 ].setFicha(ficha);
                     }
                 }
-                System.out.println(                ficha.getContenido()
-                );
             }
             catch (InputMismatchException exception) {
                 System.out.println ("Jugador " + jugador + ", valor no válido, se pide un valor entero");
