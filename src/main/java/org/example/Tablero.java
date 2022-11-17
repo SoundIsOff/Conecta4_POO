@@ -1,6 +1,7 @@
 package org.example;
 
 
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -138,5 +139,56 @@ public class Tablero {
             fila++;
         } while (lleno && (fila < this.numfilas));
         return lleno;
+    }
+
+    public boolean compruebaHorizontal(char caracter){
+        boolean encontrado=false;
+        for(int i=0;i<numfilas;i++){
+            for(int j=0;j<numcolumnas-3;j++){
+                if(casillas[i][j].getFicha().getContenido()==caracter&&casillas[i][j+1].getFicha().getContenido()==caracter&&
+                        casillas[i][j+2].getFicha().getContenido()==caracter&&casillas[i][j+3].getFicha().getContenido()==caracter){
+                    encontrado=true;
+                }
+            }
+        }
+        return encontrado;
+    }
+
+    public boolean compruebaVertical(char caracter){
+        boolean encontrado=false;
+        for(int i=0;i<numcolumnas;i++){
+            for(int j=0;j<numfilas-3;j++){
+                if(casillas[j][i].getFicha().getContenido()==caracter&&casillas[j+1][i].getFicha().getContenido()==caracter&&
+                        casillas[j+2][i].getFicha().getContenido()==caracter&&casillas[j+3][i].getFicha().getContenido()==caracter){
+                    encontrado=true;
+                }
+            }
+        }
+        return encontrado;
+    }
+
+    public boolean compruebaDiagonal(char caracter){
+        boolean encontrado=false;
+        for(int i=0;i<numcolumnas-4+1;i++){
+            for(int j=0;j<numfilas-4+1;j++){
+                if(casillas[j][i].getFicha().getContenido()==caracter&&casillas[j+1][i+1].getFicha().getContenido()==caracter&&
+                        casillas[j+2][i+2].getFicha().getContenido()==caracter&&casillas[j+3][i+3].getFicha().getContenido()==caracter){
+                    encontrado=true;
+                }
+            }
+        }
+        for(int i=numcolumnas;i>3;i--){
+            for(int j=0;j<numfilas-3;j++){
+                if(casillas[j][i-1].getFicha().getContenido()==caracter&&casillas[j+1][i-2].getFicha().getContenido()==caracter&&
+                        casillas[j+2][i-3].getFicha().getContenido()==caracter&&casillas[j+3][i-4].getFicha().getContenido()==caracter){
+                    encontrado=true;
+                }
+            }
+        }
+        return encontrado;
+    }
+
+    public boolean compruebaGanador(char caracter){
+        return compruebaHorizontal(caracter) || compruebaDiagonal(caracter) || compruebaVertical(caracter);
     }
 }

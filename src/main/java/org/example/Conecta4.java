@@ -29,13 +29,14 @@ public class Conecta4
     //El juego termina cuando el tablero está lleno
     public void jugar() {
         Jugador juega = turno.tieneTurno();
+        boolean fin = false;
         tablero.dibujar();
         do {
             juega.poner(turno.nombreJugadorConTurno());
             tablero.dibujar();
+            fin=finPartida(juega);
             juega = cambiarTurno();
-        } while (!finPartida());
-        System.out.println("Fin de la partida.");
+        } while (!fin);
     }
 
     private Jugador cambiarTurno () {
@@ -43,13 +44,21 @@ public class Conecta4
         return turno.tieneTurno();
     }
 
-    private boolean finPartida() {
-        return  tablero.tableroLleno();
+    private boolean finPartida(Jugador jugador) {
+        boolean fin=false;
+        if(tablero.compruebaGanador(jugador.getLetraficha())){
+            fin=true;
+            System.out.println(jugador.getNombre()+" ha ganado! ");
+        }else if(tablero.tableroLleno()){
+            fin=true;
+            System.out.println("Fin de partida. No hay ganador.");
+        }
+        return fin;
     }
 
     public static void main( String[] args ) {
-        Jugador jugador1 = new Jugador( "Turno: RED", 'R');
-        Jugador jugador2 = new Jugador("Turno: YELLOW",'Y');
+        Jugador jugador1 = new Jugador( "RED", 'R');
+        Jugador jugador2 = new Jugador("YELLOW",'Y');
         System.out.println (BIENVENIDA);
         Jugador[] jugadores = new Jugador[] {jugador1, jugador2};
         Conecta4 conecta4 = new Conecta4(jugadores);

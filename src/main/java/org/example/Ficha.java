@@ -6,6 +6,9 @@ public class Ficha {
     public Ficha (char caracter) {
         this.contenido = caracter;
     }
+    public Ficha () {
+        this.contenido = ' ';
+    }
 
     public char getContenido() {
         return contenido;

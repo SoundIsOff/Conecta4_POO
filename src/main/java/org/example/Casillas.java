@@ -2,6 +2,7 @@ package org.example;
 
 public class Casillas {
     private Ficha ficha;
+    private char caracter;
     private final int fila;
     private final int columna;
     private final String CASILLAVACIA = "   ";
@@ -12,14 +13,25 @@ public class Casillas {
         this.columna = columna;
     }
 
+
     public Ficha getFicha() {
+        if(ficha!=null)
         return ficha;
+        else return new Ficha();
+    }
+
+    public char getCaracter() {
+        return caracter;
+    }
+
+    public void setCaracter(char caracter) {
+        this.caracter = caracter;
     }
 
     public void setFicha(Ficha ficha) {
         this.ficha = ficha;
+        this.caracter=ficha.getContenido();
     }
-
     public int getFila() {
         return fila;
     }
