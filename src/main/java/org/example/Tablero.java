@@ -167,6 +167,11 @@ public class Tablero {
         return encontrado;
     }
 
+    /**
+     *
+     * @param caracter caracter de la casilla en la que se ha colocado la ficha
+     * @return devuelve true si ha encontrado combinación ganadora en diagonal
+     */
     public boolean compruebaDiagonal(char caracter){
         boolean encontrado=false;
         for(int i=0;i<numcolumnas-4+1;i++){
