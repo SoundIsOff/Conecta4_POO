@@ -2,7 +2,6 @@ package org.example;
 
 public class Casillas {
     private Ficha ficha;
-    private char caracter;
     private final int fila;
     private final int columna;
     private final String CASILLAVACIA = "   ";
@@ -16,21 +15,18 @@ public class Casillas {
 
     public Ficha getFicha() {
         if(ficha!=null)
-        return ficha;
+            return ficha;
         else return new Ficha();
     }
 
-    public char getCaracter() {
-        return caracter;
-    }
 
-    public void setCaracter(char caracter) {
-        this.caracter = caracter;
-    }
-
+    /**
+     * Asigna la ficha dada y su contenido a la casilla
+     * @param ficha objeto ficha
+     */
     public void setFicha(Ficha ficha) {
         this.ficha = ficha;
-        this.caracter=ficha.getContenido();
+
     }
     public int getFila() {
         return fila;
@@ -45,7 +41,11 @@ public class Casillas {
         return ficha==null;
     }
 
-    //Método que devuelve la representación de una casilla
+    /**
+     * Método que devuelve la representación de una casilla si esta no está vacía
+     * @return String "vacío"
+     * @return contenido casilla
+     */
     public String dibujarCasillas() {
         if (isVacia()) {
             return CASILLAVACIA;
