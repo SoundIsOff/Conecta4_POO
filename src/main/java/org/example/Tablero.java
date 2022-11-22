@@ -5,6 +5,11 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * clase que representa el tablero de conecta4
+ * la dimensión máxima del tablero es de filaXcolumna
+ * numero maximo de filas y columnas vienen indicadas por numfilas y numcomunas
+ */
 public class Tablero {
     private Casillas[][] casillas;
     private final int numfilas;
@@ -22,7 +27,11 @@ public class Tablero {
         return numcolumnas;
     }
 
-    //Constructor del tablero basado en el número de filas y columnas
+    /**
+     * Constructor del tablero basado en el número de filas y columnas.
+     * @param numfilas indica el numero maximo de filas.
+     * @param numcolumnas indica el numero maximo de filas.
+     */
     public Tablero(int numfilas, int numcolumnas) {
         this.numfilas = numfilas;
         this.numcolumnas = numcolumnas;
@@ -30,7 +39,9 @@ public class Tablero {
         inicializarTablero();
     }
 
-    //Método que crea un tablero vacío con tantas casillas como necesite el tablero
+    /**
+     * étodo que crea un tablero vacío con tantas casillas como necesite el tablero.
+     */
     private void inicializarTablero() {
         int fila;
         int columna;
@@ -42,8 +53,10 @@ public class Tablero {
         }
     }
 
-    //Método que se encarga de dibujar un tablero
-    // Cada columna está separada por el caracter "|"
+    /**
+     *  Método que se encarga de dibujar un tablero.
+     *  Cada columna está separada por el caracter "|".
+     */
     public void dibujar() {
         int fila;
         int columna;
@@ -57,7 +70,9 @@ public class Tablero {
         this.dibujarBorde();
     }
 
-    //Método que dibuja una línea horizontal
+    /**
+     * Método que dibuja una línea horizontal.
+     */
     private void dibujarBorde() {
         System.out.println(this.CADENASEPARADORA);
     }
@@ -66,17 +81,25 @@ public class Tablero {
         System.out.print(this.SEPARADORCOLUMNA + contenido);
     }
 
-    //Método que escribe el caracter "|" al final de cada fila
+    /**
+     * étodo que escribe el caracter "|" al final de cada fila.
+     */
     private void dibujaFindeFila() {
         System.out.println(this.SEPARADORCOLUMNA);
     }
 
-    //Método que comprueba si una casilla está libre
+    /**
+     * Método que comprueba si una casilla está libre.
+     */
     public boolean estaLibre(int fila, int columna) {
         return casillas[fila][columna].isVacia();
     }
 
-    //Método que recibe una columna y devuelve la posición de la primera fila vacía de dicha columna
+    /**
+     *  Método que recibe una columna y devuelve la posición de la primera fila vacía de dicha columna.
+     * @param columna columna en la que se quiere colocar la ficha.
+     * @return fila en la que se va a colocar la ficha dentro de la columna dada.
+     */
     private int filaFicha(int columna) {
         int posicion = 0;
         int fila = numfilas - 1;
@@ -86,14 +109,22 @@ public class Tablero {
         return posicion;
     }
 
-    //Método que recibiendo una columna comprueba si la fila de arriba está ocupada
+    /**
+     * Método que recibiendo una columna comprueba si la fila de arriba está ocupada.
+     * @param columna columna que se quiere comprobar.
+     * @return devuelve si la columna llena o no.
+     */
     private boolean columnaLlena(int columna) {
         return !estaLibre(0, columna);
     }
 
-    //Método que solicita al jugador una columna
-    //Comprueba que el valor no sea inválido y que la columna no esté llena
-    //Coloca la ficha
+    /**
+     * Método que solicita al jugador una columna,
+     * Comprueba que el valor no sea inválido y que la columna no esté llena,
+     * Coloca la ficha.
+     * @param ficha ficha del jugador en turno.
+     * @param nombreJugador nombre del jugador en turno.
+     */
     public void ponerFicha(Ficha ficha, String nombreJugador,Scanner scanner) {
         int columnaElegida;
         int filaFicha;
@@ -125,7 +156,10 @@ public class Tablero {
         } while ( !correcto || llena);
     }
 
-    //Método que comprueba que todas las columna están llenas
+    /**
+     * étodo que comprueba que todas las columna están llenas.
+     * @return dvuelve si el tablero esta lleno o no.
+     */
     public boolean tableroLleno() {
         boolean lleno=true;
         int fila = INICIO;
@@ -141,6 +175,11 @@ public class Tablero {
         return lleno;
     }
 
+    /**
+     * metodo que comprueba si hay ganador en horizontal.
+     * @param caracter caracter de la casilla en la que se ha colocado la ficha.
+     * @return devuelve true si ha encontrado combinación ganadora en horizontal.
+     */
     public boolean compruebaHorizontal(char caracter){
         boolean encontrado=false;
         for(int i=0;i<numfilas;i++){
@@ -154,6 +193,11 @@ public class Tablero {
         return encontrado;
     }
 
+    /**
+     * metodo que comprueba si hay ganador en vertical.
+     * @param caracter caracter de la casilla en la que se ha colocado la ficha.
+     * @return devuelve true si ha encontrado combinación ganadora en vertical.
+     */
     public boolean compruebaVertical(char caracter){
         boolean encontrado=false;
         for(int i=0;i<numcolumnas;i++){
@@ -168,9 +212,9 @@ public class Tablero {
     }
 
     /**
-     *
-     * @param caracter caracter de la casilla en la que se ha colocado la ficha
-     * @return devuelve true si ha encontrado combinación ganadora en diagonal
+     * metodo que comprueba si hay ganador en diagonal.
+     * @param caracter caracter de la casilla en la que se ha colocado la ficha.
+     * @return devuelve true si ha encontrado combinación ganadora en diagonal.
      */
     public boolean compruebaDiagonal(char caracter){
         boolean encontrado=false;
@@ -193,6 +237,11 @@ public class Tablero {
         return encontrado;
     }
 
+    /**
+     * metodo que comprueba si hay ganador.
+     * @param caracter caracter de la casilla en la que se ha colocado la ficha.
+     * @return devuelve true si ha encontrado combinación ganadora en horizontal, vertical o diagonal.
+     */
     public boolean compruebaGanador(char caracter){
         return compruebaHorizontal(caracter) || compruebaDiagonal(caracter) || compruebaVertical(caracter);
     }
