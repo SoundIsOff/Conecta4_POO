@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * clase que representa el tablero de conecta4
  * la dimensión máxima del tablero es de filaXcolumna
- * numero maximo de filas y columnas vienen indicadas por numfilas y numcomunas
+ * número maximo de filas y columnas vienen indicadas por numfilas y numcomunas
  */
 public class Tablero {
     private Casillas[][] casillas;
@@ -40,7 +40,7 @@ public class Tablero {
     }
 
     /**
-     * étodo que crea un tablero vacío con tantas casillas como necesite el tablero.
+     * Método que crea un tablero vacío con tantas casillas como necesite el tablero.
      */
     private void inicializarTablero() {
         int fila;
@@ -82,7 +82,7 @@ public class Tablero {
     }
 
     /**
-     * étodo que escribe el caracter "|" al final de cada fila.
+     * Método que escribe el caracter "|" al final de cada fila.
      */
     private void dibujaFindeFila() {
         System.out.println(this.SEPARADORCOLUMNA);
@@ -157,7 +157,7 @@ public class Tablero {
     }
 
     /**
-     * étodo que comprueba que todas las columna están llenas.
+     * Método que comprueba que todas las columna están llenas.
      * @return dvuelve si el tablero esta lleno o no.
      */
     public boolean tableroLleno() {
@@ -176,7 +176,7 @@ public class Tablero {
     }
 
     /**
-     * metodo que comprueba si hay ganador en horizontal.
+     * Método que comprueba si hay ganador en horizontal.
      * @param caracter caracter de la casilla en la que se ha colocado la ficha.
      * @return devuelve true si ha encontrado combinación ganadora en horizontal.
      */
@@ -194,7 +194,7 @@ public class Tablero {
     }
 
     /**
-     * metodo que comprueba si hay ganador en vertical.
+     * Método que comprueba si hay ganador en vertical.
      * @param caracter caracter de la casilla en la que se ha colocado la ficha.
      * @return devuelve true si ha encontrado combinación ganadora en vertical.
      */
@@ -212,7 +212,7 @@ public class Tablero {
     }
 
     /**
-     * metodo que comprueba si hay ganador en diagonal.
+     * Método que comprueba si hay ganador en diagonal.
      * @param caracter caracter de la casilla en la que se ha colocado la ficha.
      * @return devuelve true si ha encontrado combinación ganadora en diagonal.
      */
@@ -238,7 +238,7 @@ public class Tablero {
     }
 
     /**
-     * metodo que comprueba si hay ganador.
+     * Método que comprueba si hay ganador.
      * @param caracter caracter de la casilla en la que se ha colocado la ficha.
      * @return devuelve true si ha encontrado combinación ganadora en horizontal, vertical o diagonal.
      */
