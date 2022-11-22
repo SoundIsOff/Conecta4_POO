@@ -158,10 +158,10 @@ public class Tablero {
 
     /**
      * Método que comprueba que todas las columna están llenas.
-     * @return dvuelve si el tablero esta lleno o no.
+     * @return devuelve si el tablero esta lleno o no.
      */
     public boolean tableroLleno() {
-        boolean lleno=true;
+        boolean lleno;
         int fila = INICIO;
         int columna;
         do {
