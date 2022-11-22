@@ -12,7 +12,8 @@ public class Jugador {
     private String nombre;
 
     /**
-     * Constructor que crea un jugador.
+     * Constructor que crea un jugador, pasándole su nombre y letra
+     * e iniciando el tablero a null
      * @param nombre cadena de caracteres para el nombre del jugador.
      * @param letra char con la letra que le corresponde al jugador dentro del tablero.
      */
@@ -21,15 +22,16 @@ public class Jugador {
         this.letraficha = letra;
         this.tablero = null;
     }
+
     /**
-     * metodo para saber el nombre del jugador.
+     * método para saber el nombre del jugador.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * metodo para cambiar el nomre del jugador.
+     * metodo para cambiar el nombre del jugador.
      * @param nombre cadena de caracteres para el nombre del jugador.
      */
     public void setNombre(String nombre) {
@@ -38,7 +40,7 @@ public class Jugador {
 
     /**
      * metodo para conocer la letra que le corresponde al jugador.
-     * @return letraficha devuelve la letra.
+     * @return char letraficha devuelve la letra.
      */
     public char getLetraficha() {
         return letraficha;
@@ -53,8 +55,7 @@ public class Jugador {
     }
 
     /**
-     * Crea la ficha y la asigna al tablero.
-     * Método para poner una ficha en una casilla del tablero.
+     * Crea una ficha y la pasa al tablero donde se asigna en una casilla
      * @param nombreJugador nombre del jugador con el cual se va a colocar la ficha.
      */
     public void poner(String nombreJugador) {
