@@ -218,8 +218,8 @@ public class Tablero {
      */
     public boolean compruebaDiagonal(char caracter){
         boolean encontrado=false;
-        for(int i=0;i<numcolumnas-4+1;i++){
-            for(int j=0;j<numfilas-4+1;j++){
+        for(int i=0;i<numcolumnas-3;i++){
+            for(int j=0;j<numfilas-3;j++){
                 if(casillas[j][i].getFicha().getContenido()==caracter&&casillas[j+1][i+1].getFicha().getContenido()==caracter&&
                         casillas[j+2][i+2].getFicha().getContenido()==caracter&&casillas[j+3][i+3].getFicha().getContenido()==caracter){
                     encontrado=true;
