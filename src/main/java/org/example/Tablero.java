@@ -11,7 +11,7 @@ import java.util.Scanner;
  * número maximo de filas y columnas vienen indicadas por numfilas y numcomunas
  */
 public class Tablero {
-    private Casillas[][] casillas;
+    public Casillas[][] casillas;
     private final int numfilas;
     private final int numcolumnas;
 
