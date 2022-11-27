@@ -5,6 +5,7 @@ public class Partida {
     private Jugador[] jugadores;
     private Tablero tablero;
     private Arbitro arbitro;
+
     private final int NUMJUGADORES = 2;
     private final int INICIOBUCLE = 0;
 
@@ -20,6 +21,7 @@ public class Partida {
         this.turno = new Turno(this.jugadores);
         actualizaTableroEnJugadores(this.tablero);
     }
+
 
     /**
      * Actualiza el tablero para que ambos jugadores puedan colocar fichas
@@ -37,7 +39,7 @@ public class Partida {
      * al jugador, se dibuja el tablero, se valora el estado de la partida y se cambia de jugador
      * El juego termina cuando el tablero está lleno o un jugador hace 4 en raya
      */
-    public void jugar() {
+    public void iniciar() {
         Jugador juega = turno.tieneTurno();
         arbitro = new Arbitro(tablero);
         boolean fin;

@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -21,6 +22,24 @@ public class Jugador {
         this.nombre = nombre;
         this.letraficha = letra;
         this.tablero = null;
+    }
+
+
+    public static Jugador[] prepararJugadores(){
+        Jugador jugador1 = new Jugador( "RED", 'R');
+        Jugador jugador2 = new Jugador("YELLOW",'Y');
+
+        return new Jugador[] {jugador1, jugador2};
+    }
+
+
+    public static Jugador crearJugador(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca Color:");
+        String color =  scanner.next().toUpperCase(Locale.ROOT);
+        char letra = color.toUpperCase(Locale.ROOT).charAt(0);
+        return new Jugador(color, letra);
+
     }
 
     /**
