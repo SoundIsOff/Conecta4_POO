@@ -9,6 +9,7 @@ public class Conecta4
     private Turno turno;
     private Jugador[] jugadores;
     private Tablero tablero;
+    private Arbitro arbitro;
     private final int NUMJUGADORES = 2;
     private final int INICIOBUCLE = 0;
     private static final String BIENVENIDA = "--- CONECTA 4 ---";
@@ -43,6 +44,7 @@ public class Conecta4
      */
     public void jugar() {
         Jugador juega = turno.tieneTurno();
+        arbitro = new Arbitro(tablero);
         boolean fin;
         tablero.dibujar();
         do {
@@ -62,6 +64,7 @@ public class Conecta4
         return turno.tieneTurno();
     }
 
+
     /**
      * Se evalúa un boolean que será true si el jugador ha ganado o si el tablero está lleno.
      * Si no, devolverla false por defecto. En el caso de terminarse la partida, escribe
@@ -71,13 +74,15 @@ public class Conecta4
      */
     private boolean finPartida(Jugador jugador) {
         boolean fin=false;
-        if(tablero.compruebaGanador(jugador.getLetraficha())){
+
+        if(arbitro.compruebaGanador(jugador.getLetraficha())){
             fin=true;
             System.out.println(jugador.getNombre()+" ha ganado! ");
         }else if(tablero.tableroLleno()){
             fin=true;
             System.out.println("Fin de partida. No hay ganador.");
         }
+
         return fin;
     }
 
