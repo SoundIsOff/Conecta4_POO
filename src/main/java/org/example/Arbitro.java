@@ -36,8 +36,8 @@ public class Arbitro {
      */
     public boolean compruebaHorizontal(char caracter){
         boolean encontrado=false;
-        for(int i=0;i<tablero.getNumcolumnas();i++){
-            for(int j=0;j<tablero.getNumfilas()-3;j++){
+        for(int i=0;i<tablero.getNumfilas();i++){
+            for(int j=0;j<tablero.getNumcolumnas()-3;j++){
                 if(tablero.casillas[i][j].getFicha().getContenido()==caracter&&tablero.casillas[i][j+1].getFicha().getContenido()==caracter&&
                         tablero.casillas[i][j+2].getFicha().getContenido()==caracter&&tablero.casillas[i][j+3].getFicha().getContenido()==caracter){
                     encontrado=true;
