@@ -7,9 +7,7 @@ package org.example;
  */
 public class Arbitro {
     Tablero tablero;
-    boolean hayGanador = false;
-    int numfilas;
-    int numcolumnas;
+    boolean hayGanador;
 
 
     /**
@@ -18,13 +16,8 @@ public class Arbitro {
      */
     public Arbitro(Tablero tablero){
         this.tablero=tablero;
-        this.numfilas= tablero.getNumfilas();
-        this.numcolumnas=tablero.getNumcolumnas();
 
     }
-
-
-
 
     /**
      * Método que comprueba si hay ganador devolviendo true si hay 4 en raya horizontal, vertical o diagonal
@@ -43,8 +36,8 @@ public class Arbitro {
      */
     public boolean compruebaHorizontal(char caracter){
         boolean encontrado=false;
-        for(int i=0;i<numfilas;i++){
-            for(int j=0;j<numcolumnas-3;j++){
+        for(int i=0;i<tablero.getNumcolumnas();i++){
+            for(int j=0;j<tablero.getNumfilas()-3;j++){
                 if(tablero.casillas[i][j].getFicha().getContenido()==caracter&&tablero.casillas[i][j+1].getFicha().getContenido()==caracter&&
                         tablero.casillas[i][j+2].getFicha().getContenido()==caracter&&tablero.casillas[i][j+3].getFicha().getContenido()==caracter){
                     encontrado=true;
@@ -61,8 +54,8 @@ public class Arbitro {
      */
     public boolean compruebaVertical(char caracter){
         boolean encontrado=false;
-        for(int i=0;i<numcolumnas;i++){
-            for(int j=0;j<numfilas-3;j++){
+        for(int i=0;i<tablero.getNumcolumnas();i++){
+            for(int j=0;j<tablero.getNumfilas()-3;j++){
                 if(tablero.casillas[j][i].getFicha().getContenido()==caracter&&tablero.casillas[j+1][i].getFicha().getContenido()==caracter&&
                         tablero.casillas[j+2][i].getFicha().getContenido()==caracter&&tablero.casillas[j+3][i].getFicha().getContenido()==caracter){
                     encontrado=true;
@@ -79,16 +72,16 @@ public class Arbitro {
      */
     public boolean compruebaDiagonal(char caracter){
         boolean encontrado=false;
-        for(int i=0;i<numcolumnas-3;i++){
-            for(int j=0;j<numfilas-3;j++){
+        for(int i=0;i<tablero.getNumcolumnas()-3;i++){
+            for(int j=0;j<tablero.getNumfilas()-3;j++){
                 if(tablero.casillas[j][i].getFicha().getContenido()==caracter&&tablero.casillas[j+1][i+1].getFicha().getContenido()==caracter&&
                         tablero.casillas[j+2][i+2].getFicha().getContenido()==caracter&&tablero.casillas[j+3][i+3].getFicha().getContenido()==caracter){
                     encontrado=true;
                 }
             }
         }
-        for(int i=numcolumnas;i>3;i--){
-            for(int j=0;j<numfilas-3;j++){
+        for(int i=tablero.getNumcolumnas();i>3;i--){
+            for(int j=0;j<tablero.getNumfilas()-3;j++){
                 if(tablero.casillas[j][i-1].getFicha().getContenido()==caracter&&tablero.casillas[j+1][i-2].getFicha().getContenido()==caracter&&
                         tablero.casillas[j+2][i-3].getFicha().getContenido()==caracter&&tablero.casillas[j+3][i-4].getFicha().getContenido()==caracter){
                     encontrado=true;
