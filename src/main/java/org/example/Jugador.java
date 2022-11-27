@@ -24,7 +24,10 @@ public class Jugador {
         this.tablero = null;
     }
 
-
+    /**
+     * Constructor del array de jugadores que se usará el resto de la partida
+     * @return jugadores
+     */
     public static Jugador[] prepararJugadores(){
         Jugador jugador1 = new Jugador( "RED", 'R');
         Jugador jugador2 = new Jugador("YELLOW",'Y');
@@ -33,6 +36,11 @@ public class Jugador {
     }
 
 
+    /**
+     * Método que pide al usuario el color que va a usar y lo convierte a String en mayúsculas.
+     * De este String tambien se obtiene la letra char que se usará para las fichas de dicho jugador
+     * @return jugador creado manualmente
+     * */
     public static Jugador crearJugador(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduzca Color:");
