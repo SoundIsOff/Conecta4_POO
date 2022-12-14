@@ -28,21 +28,7 @@ public class Jugador {
      * Constructor del array de jugadores que se usará el resto de la partida
      * @return jugadores
      */
-    public static Jugador[] basico(){
-        Jugador jugador1 = new Jugador( "RED", 'R');
-        Jugador jugador2 = new Jugador("YELLOW",'Y');
-
-        return new Jugador[] {jugador1, jugador2};
-    }
-
-    public static Jugador[] entrenamiento(){
-        Jugador jugador1 = new Jugador( "RED", 'R');
-        Jugador jugador2 = new Jugador("YELLOW",'Y');
-
-        return new Jugador[] {jugador1, jugador2};
-    }
-
-    public static Jugador[] demo(){
+    public static Jugador[] jugadores(){
         Jugador jugador1 = new Jugador( "RED", 'R');
         Jugador jugador2 = new Jugador("YELLOW",'Y');
 
