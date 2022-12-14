@@ -9,8 +9,29 @@ public class Conecta4 {
     public static void main( String[] args ) {
 
         System.out.println (BIENVENIDA);
+        Menu menu = new Menu();
+        Partida partida = null;
+        boolean partidaIniciada=true;
 
-        Partida partida = new Partida(Jugador.prepararJugadores());
-        partida.iniciar();
+
+        do {
+            switch (menu.elegirModo()) {
+                case 1:
+                    partida = new Partida(Jugador.basico());
+                    break;
+                case 2:
+                    partida = new Partida(Jugador.entrenamiento());
+                    break;
+                case 3:
+                    partida = new Partida(Jugador.demo());
+                    break;
+                default:
+                    partidaIniciada = false;
+
+
+            }
+            if (partidaIniciada)
+                partida.iniciar();
+        }while (menu.continuarPartida());
     }
 }
