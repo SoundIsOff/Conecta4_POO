@@ -17,13 +17,13 @@ public class Conecta4 {
         do {
             switch (menu.elegirModo()) {
                 case 1:
-                    partida = new Partida(Jugador.basico());
+                    partida = new Partida(Jugador.basico(), 1);
                     break;
                 case 2:
-                    partida = new Partida(Jugador.entrenamiento());
+                    partida = new Partida(Jugador.entrenamiento(), 2);
                     break;
                 case 3:
-                    partida = new Partida(Jugador.demo());
+                    partida = new Partida(Jugador.demo(), 3);
                     break;
                 default:
                     partidaIniciada = false;

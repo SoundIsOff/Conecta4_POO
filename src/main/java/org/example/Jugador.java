@@ -100,9 +100,16 @@ public class Jugador {
      * Crea una ficha y la pasa al tablero donde se asigna en una casilla
      * @param nombreJugador nombre del jugador con el cual se va a colocar la ficha.
      */
-    public void poner(String nombreJugador) {
+    public void jugadorPoneFicha(String nombreJugador) {
         Scanner scanner = new Scanner(System.in);
         Ficha mificha = new Ficha(this.letraficha);
-        this.tablero.ponerFicha(mificha, nombreJugador, scanner);
+        this.tablero.ponerFicha(mificha, nombreJugador, scanner );
     }
+
+    public void cpuPoneFicha(String nombreJugador){
+        Ficha mificha = new Ficha(this.letraficha);
+        tablero.ponerFichaCPU(mificha);
+    }
+
+
 }

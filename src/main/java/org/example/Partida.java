@@ -5,6 +5,7 @@ public class Partida {
     private Jugador[] jugadores;
     private Tablero tablero;
     private Arbitro arbitro;
+    private int modo;
 
     private final int NUMJUGADORES = 2;
     private final int INICIOBUCLE = 0;
@@ -15,10 +16,11 @@ public class Partida {
      * Necesita el vector con los dos jugadores que van a jugar
      * @param jugadores array de jugadores
      */
-    public Partida(Jugador[] jugadores) {
+    public Partida(Jugador[] jugadores, int modo) {
         this.jugadores = jugadores;
         this.tablero = new Tablero(6, 7);
         this.turno = new Turno(this.jugadores);
+        this.modo=modo;
         actualizaTableroEnJugadores(this.tablero);
     }
 
@@ -45,12 +47,28 @@ public class Partida {
         boolean fin;
         tablero.dibujar();
         do {
-            juega.poner(turno.nombreJugadorConTurno());
+            modoJuego(juega, turno);
             tablero.dibujar();
             fin=finPartida(juega);
             juega = cambiarTurno();
         } while (!fin);
     }
+
+    public void modoJuego(Jugador juega, Turno turno){
+        if(modo==1){
+            juega.jugadorPoneFicha(turno.nombreJugadorConTurno());
+
+        }
+        else if(modo==2){
+            if(juega==jugadores[1])
+                juega.cpuPoneFicha(turno.nombreJugadorConTurno());
+            else  juega.jugadorPoneFicha(turno.nombreJugadorConTurno());
+        }
+        else  juega.cpuPoneFicha(turno.nombreJugadorConTurno());
+    }
+
+
+
 
     /**
      * Devuelve el nuevo jugador después de alternar entre ellos

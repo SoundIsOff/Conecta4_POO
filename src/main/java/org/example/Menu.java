@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    private int modo;
+    public int modo;
     Scanner teclado = new Scanner(System.in);
 
     public int getModo() {
@@ -36,8 +36,8 @@ public class Menu {
     }
 
     public boolean continuarPartida(){
-        System.out.println("Desea continuar? (y/n)");
+        System.out.println("Pulse \"s\" para continuar.");
         char opcion = teclado.next().charAt(0);
-        return opcion == 'y';
+        return opcion == 's';
     }
 }

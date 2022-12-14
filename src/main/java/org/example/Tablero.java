@@ -118,6 +118,27 @@ public class Tablero {
         return !estaLibre(0, columna);
     }
 
+    public int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
+
+    public void ponerFichaCPU(Ficha ficha){
+        boolean llena = false;
+        do {
+            int columnaElegida = getRandomNumber(1, 6);
+            int filaFicha;
+
+            llena = columnaLlena(columnaElegida - 1);
+
+            if (!llena) {
+                filaFicha = filaFicha(columnaElegida - 1);
+                casillas[filaFicha][columnaElegida - 1].setFicha(ficha);
+            }
+        }while (llena);
+
+
+    }
+
     /**
      * Método que solicita al jugador una columna,
      * Comprueba que el valor no sea inválido y que la columna no esté llena,
@@ -132,6 +153,9 @@ public class Tablero {
         boolean correcto = false;
         do {
             System.out.println(nombreJugador+"\nIntroduzca la columna (1-7): ");
+
+
+
             try {
                 columnaElegida = scanner.nextInt();
                 if (columnaElegida > 7 || columnaElegida < 1)
