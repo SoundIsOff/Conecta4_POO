@@ -123,7 +123,7 @@ public class Tablero {
     }
 
     public void ponerFichaCPU(Ficha ficha){
-        boolean llena = false;
+        boolean llena;
         do {
             int columnaElegida = getRandomNumber(1, 6);
             int filaFicha;
@@ -146,15 +146,13 @@ public class Tablero {
      * @param ficha ficha del jugador en turno.
      * @param nombreJugador nombre del jugador en turno.
      */
-    public void ponerFicha(Ficha ficha, String nombreJugador,Scanner scanner) {
+    public void ponerFichaPersona(Ficha ficha, String nombreJugador, Scanner scanner) {
         int columnaElegida;
         int filaFicha;
         boolean llena = false;
         boolean correcto = false;
         do {
             System.out.println(nombreJugador+"\nIntroduzca la columna (1-7): ");
-
-
 
             try {
                 columnaElegida = scanner.nextInt();

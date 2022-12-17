@@ -89,7 +89,7 @@ public class Jugador {
     public void jugadorPoneFicha(String nombreJugador) {
         Scanner scanner = new Scanner(System.in);
         Ficha mificha = new Ficha(this.letraficha);
-        this.tablero.ponerFicha(mificha, nombreJugador, scanner );
+        this.tablero.ponerFichaPersona(mificha, nombreJugador, scanner );
     }
 
     public void cpuPoneFicha(String nombreJugador){

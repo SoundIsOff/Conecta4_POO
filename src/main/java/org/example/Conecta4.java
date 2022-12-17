@@ -10,28 +10,13 @@ public class Conecta4 {
 
         System.out.println (BIENVENIDA);
         Menu menu = new Menu();
-        Partida partida = null;
-        boolean partidaIniciada=true;
+        Partida partida;
 
 
         do {
-            switch (menu.elegirModo()) {
-                case 1:
-                    partida = new Partida(Jugador.jugadores(), 1);
-                    break;
-                case 2:
-                    partida = new Partida(Jugador.jugadores(), 2);
-                    break;
-                case 3:
-                    partida = new Partida(Jugador.jugadores(), 3);
-                    break;
-                default:
-                    partidaIniciada = false;
 
-
-            }
-            if (partidaIniciada)
-                partida.iniciar();
+            partida = new Partida(Jugador.jugadores(), menu.elegirModo());
+            partida.iniciar();
         }while (menu.continuarPartida());
     }
 }
