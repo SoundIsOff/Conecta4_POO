@@ -6,7 +6,6 @@ public class Partida {
     private Tablero tablero;
     private Arbitro arbitro;
     private int modo;
-
     private final int NUMJUGADORES = 2;
     private final int INICIOBUCLE = 0;
 
@@ -16,11 +15,12 @@ public class Partida {
      * Necesita el vector con los dos jugadores que van a jugar
      * @param jugadores array de jugadores
      */
-    public Partida(Jugador[] jugadores, int modo) {
+    public Partida(Jugador[] jugadores) {
         this.jugadores = jugadores;
         this.tablero = new Tablero(6, 7);
         this.turno = new Turno(this.jugadores);
-        this.modo=modo;
+        ModoJuego modoJuego = new ModoJuego();
+        this.modo=modoJuego.getModo();
         actualizaTableroEnJugadores(this.tablero);
     }
 

@@ -9,14 +9,12 @@ public class Conecta4 {
 
         Menu menu = new Menu();
         Partida partida;
-        ModoJuego modoJuego;
 
 
         menu.printBienvenida();
 
         do {
-            modoJuego = new ModoJuego();
-            partida = new Partida(Jugador.jugadores(), modoJuego.getModo());
+            partida = new Partida(Jugador.jugadores());
             partida.iniciar();
         }while (menu.continuarPartida());
 
