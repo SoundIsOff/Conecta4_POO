@@ -15,8 +15,7 @@ public class CPU implements JugadorInterface {
     }
 
     public void ponerFicha(String nombreJugador) {
-        Scanner scanner = new Scanner(System.in);
-        Ficha mificha = new Ficha(this.letraficha);
-        this.tablero.ponerFichaCPU(mificha);
+        Ficha fichaRandom = new Ficha(this.letraficha);
+        this.tablero.ponerFichaCPU(fichaRandom);
     }
 }
