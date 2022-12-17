@@ -2,10 +2,9 @@ package org.example;
 
 public class Partida {
     private Turno turno;
-    private Jugador[] jugadores;
+    private JugadorInterface[] jugadores;
     private Tablero tablero;
     private Arbitro arbitro;
-    private int modo;
     private final int NUMJUGADORES = 2;
     private final int INICIOBUCLE = 0;
 
@@ -15,12 +14,11 @@ public class Partida {
      * Necesita el vector con los dos jugadores que van a jugar
      * @param jugadores array de jugadores
      */
-    public Partida(Jugador[] jugadores) {
+    public Partida(JugadorInterface[] jugadores) {
         this.jugadores = jugadores;
         this.tablero = new Tablero(6, 7);
         this.turno = new Turno(this.jugadores);
-        ModoJuego modoJuego = new ModoJuego();
-        this.modo=modoJuego.getModo();
+
         actualizaTableroEnJugadores(this.tablero);
     }
 
@@ -43,39 +41,24 @@ public class Partida {
      */
     public void iniciar() {
 
-        Jugador juega = turno.tieneTurno();
+        JugadorInterface juega = turno.tieneTurno();
         arbitro = new Arbitro(tablero);
         boolean fin;
         tablero.dibujar();
         do {
-            modoJuego(juega, turno);
+            juega.ponerFicha(juega.getNombre());
             tablero.dibujar();
             fin=finPartida(juega);
             juega = cambiarTurno();
         } while (!fin);
     }
 
-    public void modoJuego(Jugador juega, Turno turno){
-        if(modo==1){
-            juega.jugadorPoneFicha(turno.nombreJugadorConTurno());
-
-        }
-        else if(modo==2){
-            if(juega==jugadores[1])
-                juega.cpuPoneFicha(turno.nombreJugadorConTurno());
-            else  juega.jugadorPoneFicha(turno.nombreJugadorConTurno());
-        }
-        else  juega.cpuPoneFicha(turno.nombreJugadorConTurno());
-    }
-
-
-
 
     /**
      * Devuelve el nuevo jugador después de alternar entre ellos
      * @return jugador siguiente en el array de jugadores
      */
-    private Jugador cambiarTurno () {
+    private JugadorInterface cambiarTurno () {
         turno.cambiaTurno();
         return turno.tieneTurno();
     }
@@ -88,7 +71,7 @@ public class Partida {
      * @param jugador se comprueba si este jugador ha ganado
      * @return boolean con dos casos: true si ha ganado o tablero lleno y false si no
      */
-    private boolean finPartida(Jugador jugador) {
+    private boolean finPartida(JugadorInterface jugador) {
         boolean fin=false;
 
         if(arbitro.compruebaGanador(jugador.getLetraficha())){

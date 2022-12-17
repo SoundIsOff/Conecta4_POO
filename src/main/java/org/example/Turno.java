@@ -6,7 +6,7 @@ package org.example;
  * jugador 0 comienza la partida.
  */
 public class Turno {
-    private final Jugador[] jugadores;
+    private final JugadorInterface[] jugadores;
     private static final int JUGADORINICIAL = 0;
     private int juega;
 
@@ -14,7 +14,7 @@ public class Turno {
      * Contructor que recibe la lista de jugadores entre los cuales repartir el turno.
      * @param jugadores  vector de jugadores disponibles.
      */
-    public Turno (Jugador[] jugadores) {
+    public Turno (JugadorInterface[] jugadores) {
         this.juega = JUGADORINICIAL;
         this.jugadores = jugadores;
     }
@@ -23,7 +23,7 @@ public class Turno {
      * Método que indica el jugador que tiene el turno de la lista de jugadores.
      * @return devuelve el jugador al que le corresponde el turno.
      */
-    public Jugador tieneTurno() {
+    public JugadorInterface tieneTurno() {
         return jugadores[juega];
     }
 

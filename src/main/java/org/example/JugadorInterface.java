@@ -1,5 +1,11 @@
 package org.example;
 
 public interface JugadorInterface {
-    public void ponerFicha(String nombreJugador);
+    void ponerFicha(String nombreJugador);
+
+    String getNombre();
+
+    void setTablero(Tablero tablero);
+
+    char getLetraficha();
 }

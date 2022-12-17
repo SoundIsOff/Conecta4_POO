@@ -100,7 +100,7 @@ public class Tablero {
      * @param columna columna en la que se quiere colocar la ficha.
      * @return fila en la que se va a colocar la ficha dentro de la columna dada.
      */
-    private int filaFicha(int columna) {
+    public int filaFicha(int columna) {
         int posicion = 0;
         int fila = numfilas - 1;
         for (int i = 0; i <= fila; i++) {
@@ -114,69 +114,14 @@ public class Tablero {
      * @param columna columna que se quiere comprobar.
      * @return devuelve si la columna llena o no.
      */
-    private boolean columnaLlena(int columna) {
+    public boolean columnaLlena(int columna) {
         return !estaLibre(0, columna);
     }
 
-    public int getRandomNumber(int min, int max) {
-        return (int) ((Math.random() * (max - min)) + min);
-    }
 
-    public void ponerFichaCPU(Ficha ficha){
-        boolean llena;
-        do {
-            int columnaElegida = getRandomNumber(1, 7);
-            int filaFicha;
-
-            llena = columnaLlena(columnaElegida - 1);
-
-            if (!llena) {
-                filaFicha = filaFicha(columnaElegida - 1);
-                casillas[filaFicha][columnaElegida - 1].setFicha(ficha);
-            }
-        }while (llena);
-
-
-    }
-
-    /**
-     * Método que solicita al jugador una columna,
-     * Comprueba que el valor no sea inválido y que la columna no esté llena,
-     * Coloca la ficha.
-     * @param ficha ficha del jugador en turno.
-     * @param nombreJugador nombre del jugador en turno.
-     */
-    public void ponerFichaPersona(Ficha ficha, String nombreJugador, Scanner scanner) {
-        int columnaElegida;
-        int filaFicha;
-        boolean llena = false;
-        boolean correcto = false;
-        do {
-            System.out.println(nombreJugador+"\nIntroduzca la columna (1-7): ");
-
-            try {
-                columnaElegida = scanner.nextInt();
-                if (columnaElegida > 7 || columnaElegida < 1)
-                    System.out.println("Valor invalido.");
-                else{
-                    llena = columnaLlena(columnaElegida-1);
-                    if (llena){
-                        System.out.println("La columna esta llena.");
-
-                    }
-                    else {
-                        correcto = true;
-                        filaFicha = filaFicha(columnaElegida-1);
-                        casillas[filaFicha][columnaElegida-1 ].setFicha(ficha);
-                    }
-                }
-            }
-            catch (InputMismatchException exception) {
-                System.out.println ("Jugador " + nombreJugador + ", valor no válido, se pide un valor entero");
-                scanner.next();
-            }
-        } while ( !correcto || llena);
-    }
+   public void ponerFicha(int filaFicha, int filaColumna, Ficha ficha){
+       casillas[filaFicha][filaColumna-1 ].setFicha(ficha);
+   }
 
     /**
      * Método que comprueba que todas las columna están llenas.

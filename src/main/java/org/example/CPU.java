@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.Scanner;
 
 public class CPU implements JugadorInterface {
     private char letraficha;
@@ -16,6 +15,45 @@ public class CPU implements JugadorInterface {
 
     public void ponerFicha(String nombreJugador) {
         Ficha fichaRandom = new Ficha(this.letraficha);
-        this.tablero.ponerFichaCPU(fichaRandom);
+        this.ponerFichaCPU(fichaRandom);
     }
+
+    public void ponerFichaCPU(Ficha ficha){
+        boolean llena;
+        do {
+            int columnaElegida = getRandomNumber(1, 7);
+            int filaFicha;
+
+            llena = tablero.columnaLlena(columnaElegida - 1);
+
+            if (!llena) {
+                filaFicha = tablero.filaFicha(columnaElegida - 1);
+                tablero.ponerFicha(filaFicha, columnaElegida, ficha);
+            }
+        }while (llena);
+
+
+    }
+
+    public int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
+
+
+    public char getLetraficha() {
+        return letraficha;
+    }
+
+
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+
+
 }
