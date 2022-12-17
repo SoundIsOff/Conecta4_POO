@@ -14,7 +14,7 @@ public class Conecta4 {
         menu.printBienvenida();
 
         do {
-            ModoJuego modoJuego = new ModoJuego();
+            ModoJuego modoJuego = new ModoJuego(menu);
             partida = new Partida(modoJuego.getModo());
             partida.iniciar();
         }while (menu.continuarPartida());
