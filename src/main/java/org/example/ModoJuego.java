@@ -14,7 +14,8 @@ public class ModoJuego {
     public JugadorInterface[] getModo() {
         if(modo==1) return basico();
         else if (modo==2) return entrenamiento();
-        else return demo();
+        else if(modo==3) return demo();
+        else return fin();
     }
 
     public JugadorInterface[] basico(){
@@ -27,6 +28,11 @@ public class ModoJuego {
 
     public JugadorInterface[] demo(){
         return new JugadorInterface[] {new CPU( "RED", 'R'), new CPU( "YELLOW",'Y')};
+    }
+
+    public JugadorInterface[] fin(){
+        System.exit(0);
+        return new JugadorInterface[] {};
     }
 
 
