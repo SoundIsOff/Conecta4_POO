@@ -42,6 +42,7 @@ public class Partida {
      * El juego termina cuando el tablero está lleno o un jugador hace 4 en raya
      */
     public void iniciar() {
+
         Jugador juega = turno.tieneTurno();
         arbitro = new Arbitro(tablero);
         boolean fin;

@@ -3,9 +3,13 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class modoJuego {
+public class ModoJuego {
     private int modo;
     private Scanner teclado;
+
+    public ModoJuego() {
+        this.modo = elegirModo();
+    }
 
     public int getModo() {
         return modo;
