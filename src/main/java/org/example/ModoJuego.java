@@ -2,11 +2,17 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * Clase que define el modo de juego: básico, entrenamiento o demo.
+ */
 public class ModoJuego {
     private int modo;
     private Scanner teclado = new Scanner(System.in);
 
-
+    /**
+     * Según la opción elegida asigna el modo de juego.
+     * @param menu opción seleccionada del menú.
+     */
     public ModoJuego(Menu menu) {
         this.modo = menu.elegirModo();
     }
@@ -18,18 +24,34 @@ public class ModoJuego {
         else return fin();
     }
 
+    /**
+     * En el modo básico los dos jugadores son personas.
+     * @return devuelve un array de jugadores en el cual los dos son personas.
+     */
     public JugadorInterface[] basico(){
         return new JugadorInterface[] {new Persona( "RED", 'R'), new Persona( "YELLOW",'Y')};
     }
 
+    /**
+     * En el modo entrenamiento uno de los jugadores es una persona y el otro una CPU.
+     * @return devuelve un array de jugadores en el cual el primero es una persona y el segundo una CPU.
+     */
     public JugadorInterface[] entrenamiento(){
         return new JugadorInterface[] {new Persona( "RED", 'R'), new CPU( "YELLOW", 'Y')};
     }
 
+    /**
+     * En el modo demo los dos jugadores son CPU.
+     * @return devuelve un array de jugadores en el cual los dos son CPU.
+     */
     public JugadorInterface[] demo(){
         return new JugadorInterface[] {new CPU( "RED", 'R'), new CPU( "YELLOW",'Y')};
     }
 
+    /**
+     * Opción de fin de juego.
+     * @return devuelve un array de jugadores vacio.
+     */
     public JugadorInterface[] fin(){
         System.exit(0);
         return new JugadorInterface[] {};
