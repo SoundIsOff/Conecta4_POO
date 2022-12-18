@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * Clase Conecta4 principal
+ * Clase Conecta4 principal.
  */
 public class Conecta4 {
 

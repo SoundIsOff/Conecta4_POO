@@ -3,7 +3,7 @@ package org.example;
 
 /**
  * Clase que comprobará en el tablero si hay ganador mediante los métodos
- * horizontal, vertical y diagonal. Si alguno de estos se cumple, se acabará la partida
+ * horizontal, vertical y diagonal. Si alguno de estos se cumple, se acabará la partida.
  */
 public class Arbitro {
     Tablero tablero;
@@ -11,7 +11,7 @@ public class Arbitro {
 
 
     /**
-     * Constructor crea un tablero con el tablero pasado como parámetro
+     * Constructor crea un tablero con el tablero pasado como parámetro.
      * @param tablero el tablero
      */
     public Arbitro(Tablero tablero){
@@ -20,7 +20,7 @@ public class Arbitro {
     }
 
     /**
-     * Método que comprueba si hay ganador devolviendo true si hay 4 en raya horizontal, vertical o diagonal
+     * Método que comprueba si hay ganador devolviendo true si hay 4 en raya horizontal, vertical o diagonal.
      * @param caracter caracter de la casilla en la que se ha colocado la ficha.
      * @return devuelve true si ha encontrado combinación ganadora en horizontal, vertical o diagonal.
      */
