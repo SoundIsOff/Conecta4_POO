@@ -23,7 +23,7 @@ public class ModoJuego {
     }
 
     public JugadorInterface[] entrenamiento(){
-        return new JugadorInterface[] {new Persona( "RED", 'R'), new CPU( "RED", 'R')};
+        return new JugadorInterface[] {new Persona( "RED", 'R'), new CPU( "YELLOW", 'Y')};
     }
 
     public JugadorInterface[] demo(){
