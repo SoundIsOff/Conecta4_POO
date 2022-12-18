@@ -3,18 +3,30 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase jugador Persona.
+ * Implementa la interfaz de jugadro.
+ */
 public class Persona implements JugadorInterface {
     private char letraficha;
     private Tablero tablero;
     private String nombre;
 
-
+    /**
+     * Constructor de la clase persona.
+     * @param nombre nombre del jugador persona.
+     * @param letra carácter con el que va a jugar.
+     */
     public Persona(String nombre, char letra) {
         this.nombre = nombre;
         this.letraficha = letra;
         this.tablero = null;
     }
 
+    /**
+     * Generca una ficha y llama al metodo ponerFichaPersona.
+     * @param nombreJugador nombre del jugador que va a colocar la ficha.
+     */
     public void ponerFicha(String nombreJugador) {
         Scanner scanner = new Scanner(System.in);
         Ficha mificha = new Ficha(this.letraficha);

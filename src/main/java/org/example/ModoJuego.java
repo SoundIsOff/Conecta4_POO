@@ -10,13 +10,17 @@ public class ModoJuego {
     private Scanner teclado = new Scanner(System.in);
 
     /**
-     * Según la opción elegida asigna el modo de juego.
-     * @param menu opción seleccionada del menú.
+     * Constructor de la clase ModoJuego.
+     * @param menu menú del cual se va a elegir una opción para asignar el modo de juego.
      */
     public ModoJuego(Menu menu) {
         this.modo = menu.elegirModo();
     }
 
+    /**
+     * Asigna el modo de juego según la opción seleccionada.
+     * @return devuelve el modo de juego.
+     */
     public JugadorInterface[] getModo() {
         if(modo==1) return basico();
         else if (modo==2) return entrenamiento();

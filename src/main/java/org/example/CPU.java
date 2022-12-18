@@ -31,6 +31,7 @@ public class CPU implements JugadorInterface {
 
     /**
      * Se encarga de colocar la ficha en el tablero.
+     * La columa donde se va a colocar la ficha se genera aleatoriamente entre 1 y 7.
      * @param ficha ficha que se va a colocar en el tablero.
      */
     public void ponerFichaCPU(Ficha ficha){
