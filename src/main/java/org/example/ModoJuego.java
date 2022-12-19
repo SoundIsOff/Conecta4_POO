@@ -29,7 +29,7 @@ public class ModoJuego {
      * En el modo básico los dos jugadores son personas.
      * @return devuelve un array de jugadores en el cual los dos son personas.
      */
-    public JugadorInterface[] basico(){
+    private JugadorInterface[] basico(){
         return new JugadorInterface[] {new Persona( "RED", 'R'), new Persona( "YELLOW",'Y')};
     }
 
@@ -37,7 +37,7 @@ public class ModoJuego {
      * En el modo entrenamiento uno de los jugadores es una persona y el otro una CPU.
      * @return devuelve un array de jugadores en el cual el primero es una persona y el segundo una CPU.
      */
-    public JugadorInterface[] entrenamiento(){
+    private JugadorInterface[] entrenamiento(){
         return new JugadorInterface[] {new Persona( "RED", 'R'), new CPU( "YELLOW", 'Y')};
     }
 
@@ -45,7 +45,7 @@ public class ModoJuego {
      * En el modo demo los dos jugadores son CPU.
      * @return devuelve un array de jugadores en el cual los dos son CPU.
      */
-    public JugadorInterface[] demo(){
+    private JugadorInterface[] demo(){
         return new JugadorInterface[] {new CPU( "RED", 'R'), new CPU( "YELLOW",'Y')};
     }
 
@@ -53,7 +53,7 @@ public class ModoJuego {
      * Opción de fin de juego.
      * @return devuelve un array de jugadores vacio.
      */
-    public JugadorInterface[] fin(){
+    private JugadorInterface[] fin(){
         System.exit(0);
         return new JugadorInterface[] {};
     }

@@ -1,6 +1,6 @@
 package org.example;
 
-public class Partida {
+public class Partida extends ModoJuego {
     private Turno turno;
     private JugadorInterface[] jugadores;
     private Tablero tablero;
@@ -9,13 +9,15 @@ public class Partida {
     private final int INICIOBUCLE = 0;
 
 
+
     /**
      * Constructor de la clase en el que se define el tamaño del tablero
      * Necesita el vector con los dos jugadores que van a jugar
-     * @param jugadores array de jugadores
+     *
      */
-    public Partida(JugadorInterface[] jugadores) {
-        this.jugadores = jugadores;
+    public Partida(Menu menu) {
+        super(menu);
+        this.jugadores = getModo();
         this.tablero = new Tablero(6, 7);
         this.turno = new Turno(this.jugadores);
 
