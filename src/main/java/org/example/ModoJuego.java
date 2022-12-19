@@ -1,13 +1,10 @@
 package org.example;
 
-import java.util.Scanner;
-
 /**
  * Clase que define el modo de juego: básico, entrenamiento o demo.
  */
 public class ModoJuego {
     private int modo;
-    private Scanner teclado = new Scanner(System.in);
 
     /**
      * Constructor de la clase ModoJuego.

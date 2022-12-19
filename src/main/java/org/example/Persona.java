@@ -55,7 +55,7 @@ public class Persona implements JugadorInterface {
      * @param ficha ficha del jugador en turno.
      * @param nombreJugador nombre del jugador en turno.
      */
-    public void ponerFichaPersona(Ficha ficha, String nombreJugador, Scanner scanner) {
+     void ponerFichaPersona(Ficha ficha, String nombreJugador, Scanner scanner) {
         int columnaElegida;
         int filaFicha;
         boolean llena = false;
