@@ -1,5 +1,11 @@
 package org.example;
 
+
+/**
+ * Clase abstracta jugador, en la cual se definen sus atributos, nombre del jugador, letra con la que juega
+ * y tablero.
+ * Contiene el método abstracto ponerFicha().
+ */
 public abstract class Jugador {
     protected String nombreJugador;
     protected final char letraFicha;

@@ -1,11 +1,21 @@
 package org.example;
 
+/**
+ * Clase que implementa la interfaz de ModoJuego,
+ * implementa el modo básico de juego, en el cual los dos jugadores son persona.
+ */
 public class ModoBasico implements ModoJuego{
     private Tablero tablero;
     private Arbitro arbitro;
     private Jugador [] jugadores;
     private Turno turno;
 
+    /**
+     * Constructor de la clase.
+     * @param arbitro comprueba el ganador de la partida.
+     * @param jugadores array de jugadores.
+     * @param tablero tablero en el que se desarrolla la partida.
+     */
     public ModoBasico(Arbitro arbitro, Jugador[] jugadores, Tablero tablero) {
         this.arbitro = arbitro;
         this.jugadores = jugadores;
@@ -13,6 +23,9 @@ public class ModoBasico implements ModoJuego{
         this.turno = new Turno(jugadores);
     }
 
+    /**
+     * Método para el desarrollo de un juego básico.
+     */
     public void jugar() {
         Jugador juega = turno.tieneTurno();
         boolean finPartida;

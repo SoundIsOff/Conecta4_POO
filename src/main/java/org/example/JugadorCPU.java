@@ -1,5 +1,8 @@
 package org.example;
 
+/**
+ * Clase jugador CPU que extiende la clase de jugador.
+ */
 public class JugadorCPU extends Jugador {
 
     private PosicionCPU posicion;
@@ -8,6 +11,9 @@ public class JugadorCPU extends Jugador {
         super(nombreJugador,letraFicha);
     }
 
+    /**
+     * Método para poner ficha si el jugador es una CPU.
+     */
     public void ponerFicha() {
         boolean llena = false;
         int columnaElegida;

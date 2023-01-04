@@ -1,5 +1,8 @@
 package org.example;
 
+/**
+ * Clase de jugador persona que extiende la clase Persona.
+ */
 public class JugadorPersona extends Jugador {
 
     private PosicionPersona posicion;
@@ -8,6 +11,10 @@ public class JugadorPersona extends Jugador {
         super(nombreJugador,letraFicha);
     }
 
+
+    /**
+     * Metodo para colocar una ficha si el jugador es una perosna.
+     */
     public void ponerFicha() {
         int columnaElegida;
         int filaSeleccionada = -1;
