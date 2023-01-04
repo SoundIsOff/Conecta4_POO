@@ -1,6 +1,6 @@
 package org.example;
 
-public class PosicionCPUimplements PosicionFicha{
+public class PosicionCPU implements PosicionFicha{
 
     private final Tablero tablero;
 
