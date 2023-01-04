@@ -42,7 +42,7 @@ public class Tablero {
     /**
      * Método que crea un tablero vacío con tantas casillas como necesite el tablero.
      */
-    private void inicializarTablero() {
+    public void inicializarTablero() {
         int fila;
         int columna;
 
