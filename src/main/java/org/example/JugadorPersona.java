@@ -46,37 +46,4 @@ public class JugadorPersona extends Jugador {
 
     }
 
-    @Override
-    public void siguienteMovimiento(GestorComandos gestor) {
-        Scanner scanner = new Scanner(System.in);
-        int opcion;
-
-        System.out.println("1. Deshacer movimiento\n2. Terminar turno");
-        do{
-            opcion=scanner.nextInt();
-        }while (opcion<1 || opcion>2);
-
-        if(opcion==1){
-            gestor.undo();
-            tablero.dibujar();
-            System.out.println("1. Poner nueva ficha\n2. Rehacer movimiento");
-            do{
-                opcion=scanner.nextInt();
-            }while (opcion<1 || opcion>2);
-            if(opcion==1) {
-                ponerFicha(hacerFicha());
-                tablero.dibujar();
-            }
-            else {
-                gestor.redo();
-                tablero.dibujar();
-            }
-        }
-
-        gestor.vaciarUndo();
-        gestor.vaciarRedo();
-
-    }
-
-
 }

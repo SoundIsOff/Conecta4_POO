@@ -40,10 +40,4 @@ public class JugadorCPU extends Jugador {
         return ficha;
     }
 
-    @Override
-    public void siguienteMovimiento(GestorComandos gestor) {
-
-    }
-
-
 }

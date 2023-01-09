@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 /**
  * Clase que implementa la interfaz de ModoJuego,
  * implementa el modo entrenamiento de juego, en el cual juega un jugador persona contra máquina.
@@ -10,7 +12,7 @@ public class ModoEntrenamiento implements ModoJuego{
     private  Turno turno;
     private Tablero tablero;
     private Arbitro arbitro;
-    GestorComandos gestor = GestorComandos.getInstance();
+    private GestorComandos gestor = GestorComandos.getInstance();
 
 
     /**
@@ -44,7 +46,7 @@ public class ModoEntrenamiento implements ModoJuego{
             gestor.execute(cPF);
             this.tablero.dibujar();
 
-            juega.siguienteMovimiento(gestor);
+            siguienteMovimiento(juega);
 
             fin=finPartida(juega);
             juega = cambiarTurno();
@@ -70,4 +72,34 @@ public class ModoEntrenamiento implements ModoJuego{
 
         return fin;
     }
+    private void siguienteMovimiento(Jugador jugador) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
+        System.out.println("1. Deshacer movimiento\n2. Terminar turno");
+        do{
+            opcion=scanner.nextInt();
+        }while (opcion<1 || opcion>2);
+
+        if(opcion==1){
+            gestor.undo();
+            tablero.dibujar();
+            System.out.println("1. Poner nueva ficha\n2. Rehacer movimiento");
+            do{
+                opcion=scanner.nextInt();
+            }while (opcion<1 || opcion>2);
+            if(opcion==1) {
+                jugador.ponerFicha(jugador.hacerFicha());
+            }
+            else {
+                gestor.redo();
+            }
+            tablero.dibujar();
+        }
+
+        gestor.vaciarUndo();
+        gestor.vaciarRedo();
+
+    }
+
 }

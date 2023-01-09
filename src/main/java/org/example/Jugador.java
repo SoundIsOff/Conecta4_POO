@@ -46,6 +46,5 @@ public abstract class Jugador {
     public abstract void ponerFicha(Ficha ficha);
     public abstract void quitarFicha(Ficha ficha);
     public abstract Ficha hacerFicha();
-    public abstract void siguienteMovimiento(GestorComandos gestor);
 
 }

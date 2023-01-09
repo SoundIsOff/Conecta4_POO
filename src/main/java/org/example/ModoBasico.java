@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 /**
  * Clase que implementa la interfaz de ModoJuego,
  * implementa el modo básico de juego, en el cual los dos jugadores son persona.
@@ -9,7 +11,7 @@ public class ModoBasico implements ModoJuego{
     private Arbitro arbitro;
     private Jugador [] jugadores;
     private Turno turno;
-    GestorComandos gestor = GestorComandos.getInstance();
+    private GestorComandos gestor = GestorComandos.getInstance();
 
     /**
      * Constructor de la clase.
@@ -38,7 +40,7 @@ public class ModoBasico implements ModoJuego{
             gestor.execute(cPF);
             tablero.dibujar();
 
-            juega.siguienteMovimiento(gestor);
+            siguienteMovimiento(juega);
 
             finPartida=finPartida(juega);
             juega = turno.cambiarTurno();
@@ -59,4 +61,34 @@ public class ModoBasico implements ModoJuego{
 
         return fin;
     }
+    private void siguienteMovimiento(Jugador jugador) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
+        System.out.println("1. Deshacer movimiento\n2. Terminar turno");
+        do{
+            opcion=scanner.nextInt();
+        }while (opcion<1 || opcion>2);
+
+        if(opcion==1){
+            gestor.undo();
+            tablero.dibujar();
+            System.out.println("1. Poner nueva ficha\n2. Rehacer movimiento");
+            do{
+                opcion=scanner.nextInt();
+            }while (opcion<1 || opcion>2);
+            if(opcion==1) {
+                jugador.ponerFicha(jugador.hacerFicha());
+            }
+            else {
+                gestor.redo();
+            }
+            tablero.dibujar();
+        }
+
+        gestor.vaciarUndo();
+        gestor.vaciarRedo();
+
+    }
+
 }
