@@ -32,23 +32,18 @@ public class PosicionPersona  implements PosicionFicha{
      */
     private int ColumnaPersona( String nombreJugador, Scanner scanner) {
         int columnaElegida = -1;
-        boolean correcto = true;
+
         do {
-            System.out.println(nombreJugador+"\nIntroduzca la columna (1-7): ");
+            System.out.println(nombreJugador+"\nIntroduzca una columna (1-7): ");
 
             try {
                 columnaElegida = scanner.nextInt();
-                if (columnaElegida > 7 || columnaElegida < 1){
-                    System.out.println("Valor invalido.");
-                    correcto = false;
-                }
-
             }
             catch (InputMismatchException exception) {
                 System.out.println ("Jugador " + nombreJugador + ", valor no válido, se pide un valor entero");
                 scanner.next();
             }
-        } while ( !correcto );
+        }  while (columnaElegida > 7 || columnaElegida < 1);
         return columnaElegida;
     }
 }
