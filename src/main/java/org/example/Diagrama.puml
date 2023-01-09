@@ -218,4 +218,49 @@ class Conecta4 {
 +actualizaTableroEnJugadores ()
 +main()
 }
+
+
+Arbitro--Tablero
+
+Casillas -- Ficha
+
+ComandoPonerFicha -- Jugador
+ComandoPonerFicha -- Ficha
+GestorComandos -- Pila
+
+Jugador -- Tablero
+Jugador -- Ficha
+
+Menu -- ModoJuego
+
+ModoBasico -- Tablero
+ModoBasico -- Arbitro
+ModoBasico -- Jugador
+ModoBasico -- GestorComandos
+ModoBasico -- Turno
+
+ModoDemo -- Tablero
+ModoDemo -- Arbitro
+ModoDemo -- Jugador
+ModoDemo -- GestorComandos
+ModoDemo -- Turno
+
+ModoEntrenamiento -- Tablero
+ModoEntrenamiento -- Arbitro
+ModoEntrenamiento -- Jugador
+ModoEntrenamiento -- GestorComandos
+ModoEntrenamiento -- Turno
+
+PosicionPersona -- Tablero
+
+PosicionCPU -- Tablero
+
+Tablero --Casillas
+
+Turno--Jugador
+
+Conecta4--Tablero
+Conecta4--Jugador
+Conecta4--Arbitro
+
 @enduml
