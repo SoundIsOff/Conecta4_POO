@@ -41,6 +41,14 @@ class ComandoPonerFicha implements Comando{
 +getName()
 }
 
+class ComandoQuitarFicha implements Comando{
+- ComandoPonerFicha comandoPonerFicha;
++execute()
++undo()
++redo()
++getName()
+}
+
 class GestorComandos {
 - GestorComandos gestor;
 - Pila<Comando> pilaundo;
@@ -223,6 +231,8 @@ class Conecta4 {
 Arbitro--Tablero
 
 Casillas -- Ficha
+
+ComandoQuitarFicha -- ComandoPonerFicha
 
 ComandoPonerFicha -- Jugador
 ComandoPonerFicha -- Ficha
