@@ -73,6 +73,12 @@ public class ModoEntrenamiento implements ModoJuego{
 
         return fin;
     }
+
+    /**
+     * Método que controla el siguiente movimiento del jugador, ya sea que al poner una ficha quiera pasar el turno a la CPU
+     * o deshacer su movimiento y elegir si poner la ficha en una casilla nueva o volverla a dejar donde antes.
+     * @param jugador un jugador CPU y otro jugador Persona
+     */
     private void siguienteMovimiento(Jugador jugador) {
         Scanner scanner = new Scanner(System.in);
         int opcion;

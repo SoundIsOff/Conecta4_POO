@@ -43,11 +43,6 @@ public class Menu {
             else System.out.printf("Opción incorrecta.");
 
         } while (opcion != 4 );
-
-    }
-
-    public void printFinPartida(){
-        System.out.println (FIN);
     }
 
 }

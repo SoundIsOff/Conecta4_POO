@@ -3,6 +3,10 @@ package org.example;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Clase que apila y desapila comandos para poder ejecutar undo/redo.
+ * @param <T>
+ */
 public class Pila <T> {
     private List<T> colecciondatos;
 

@@ -2,6 +2,11 @@ package org.example;
 
 public class JugadorCPU extends Jugador {
 
+    /**
+     * Métetodo para poder usar los parámetros de la clase Jugador.
+     * @param nombreJugador
+     * @param letraFicha
+     */
     public JugadorCPU ( String nombreJugador, char letraFicha){
         super(nombreJugador,letraFicha);
     }
@@ -18,6 +23,10 @@ public class JugadorCPU extends Jugador {
         this.tablero.quitarFicha(ficha);
     }
 
+    /**
+     * Método que crea una ficha dándole la fila que le corresponde según la columna aleatoria que se le asigna
+     * @return nueva ficha con la letra correspondiente según el jugador y la fila y columna que le toca
+     */
     public Ficha hacerFicha ( ) {
         boolean llena;
         int columna;

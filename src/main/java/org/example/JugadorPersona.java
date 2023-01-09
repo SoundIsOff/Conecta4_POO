@@ -7,6 +7,11 @@ import java.util.Scanner;
  */
 public class JugadorPersona extends Jugador {
 
+    /**
+     * Métetodo para poder usar los parámetros de la clase Jugador.
+     * @param nombreJugador
+     * @param letraFicha
+     */
     public JugadorPersona (String nombreJugador, char letraFicha){
         super(nombreJugador,letraFicha);
     }
@@ -21,6 +26,10 @@ public class JugadorPersona extends Jugador {
         this.tablero.quitarFicha(ficha);
     }
 
+    /**
+     * Método que crea una ficha dándole la fila que le corresponde según la columna elegida y la asigna a cada jugador.
+     * @return nueva ficha con la letra correspondiente según el jugador y la fila y columna que le toca
+     */
     @Override
     public Ficha hacerFicha() {
         int columnaElegida;
@@ -40,7 +49,6 @@ public class JugadorPersona extends Jugador {
         } while (llena);
 
         Ficha ficha = new Ficha(letraFicha, filaSeleccionada,columnaElegida);
-        this.tablero.ponerFicha(ficha);
         setFicha(ficha);
         return ficha;
 

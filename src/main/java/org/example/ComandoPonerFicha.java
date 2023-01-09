@@ -4,27 +4,37 @@ package org.example;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Clase comandoPonerFicha que coloca una ficha en el tablero y deshace y rehace el último movimiento.
+ */
 public class ComandoPonerFicha implements Comando{
     private Jugador jugador;
-    List <Ficha> fichas = new LinkedList<>();
     Ficha ficha;
     Ficha borrar;
 
 
-
+    /**
+     * Constructor de comandoPonerFicha.
+     * @param jugador turno del jugador pasado por parámetro.
+     */
     public ComandoPonerFicha(Jugador jugador){
        this.jugador =  jugador;
-       fichas.add(jugador.getFicha());
-       this.ficha = fichas.remove(fichas.size() - 1);
+       this.ficha = jugador.getFicha();
 
 
     }
 
+    /**
+     * Método que pone la ficha de un jugador en el tablero.
+     */
     @Override
     public void execute(){
         jugador.ponerFicha(this.ficha);
     }
 
+    /**
+     * Método que deshace el último movimiento de un jugador.
+     */
     @Override
     public void undo() {
         borrar = this.ficha;

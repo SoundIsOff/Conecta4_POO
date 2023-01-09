@@ -62,6 +62,12 @@ public class ModoBasico implements ModoJuego{
 
         return fin;
     }
+
+    /**
+     * Método que controla el siguiente movimiento del jugador, ya sea que al poner una ficha quiera pasar el turno al siguiente
+     * o deshacer su movimiento y elegir si poner la ficha en una casilla nueva o volverla a dejar donde antes.
+     * @param jugador dos jugadores Persona
+     */
     private void siguienteMovimiento(Jugador jugador) {
         Scanner scanner = new Scanner(System.in);
         int opcion;
