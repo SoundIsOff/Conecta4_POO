@@ -7,8 +7,6 @@ import java.util.Scanner;
  */
 public class JugadorPersona extends Jugador {
 
-    private PosicionPersona posicion;
-
     public JugadorPersona (String nombreJugador, char letraFicha){
         super(nombreJugador,letraFicha);
     }
@@ -27,10 +25,10 @@ public class JugadorPersona extends Jugador {
     public Ficha hacerFicha() {
         int columnaElegida;
         int filaSeleccionada = -1;
-        boolean llena = false;
+        boolean llena;
 
         do {
-            this.posicion = new PosicionPersona(nombreJugador,tablero);
+            PosicionPersona posicion = new PosicionPersona(nombreJugador, tablero);
             columnaElegida = posicion.seleccionaPosicion();
             llena = tablero.columnaLlena(columnaElegida-1);
             if (llena){
