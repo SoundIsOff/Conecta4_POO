@@ -18,7 +18,7 @@ public class JugadorCPU extends Jugador {
         this.tablero.quitarFicha(ficha);
     }
 
-        public Ficha hacerFicha ( ) {
+    public Ficha hacerFicha ( ) {
         boolean llena;
         int columna;
         int fila = -1;

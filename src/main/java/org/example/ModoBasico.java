@@ -9,6 +9,7 @@ public class ModoBasico implements ModoJuego{
     private Arbitro arbitro;
     private Jugador [] jugadores;
     private Turno turno;
+    GestorComandos gestor = GestorComandos.getInstance();
 
     /**
      * Constructor de la clase.
@@ -31,8 +32,14 @@ public class ModoBasico implements ModoJuego{
         boolean finPartida;
         tablero.dibujar();
         do {
-            juega.ponerFicha();
+            juega.hacerFicha();
+
+            ComandoPonerFicha cPF = new ComandoPonerFicha(juega);
+            gestor.execute(cPF);
             tablero.dibujar();
+
+            juega.siguienteMovimiento(gestor);
+
             finPartida=finPartida(juega);
             juega = turno.cambiarTurno();
         } while (!finPartida);

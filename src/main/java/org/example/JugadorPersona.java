@@ -11,11 +11,18 @@ public class JugadorPersona extends Jugador {
         super(nombreJugador,letraFicha);
     }
 
+    @Override
+    public void ponerFicha(Ficha ficha) {
+        tablero.ponerFicha(ficha);
+    }
 
-    /**
-     * Metodo para colocar una ficha si el jugador es una perosna.
-     */
-    public void ponerFicha() {
+    @Override
+    public void quitarFicha(Ficha ficha) {
+        this.tablero.quitarFicha(ficha);
+    }
+
+    @Override
+    public Ficha hacerFicha() {
         int columnaElegida;
         int filaSeleccionada = -1;
         boolean llena = false;
@@ -32,9 +39,17 @@ public class JugadorPersona extends Jugador {
                 filaSeleccionada = tablero.filaFicha(columnaElegida-1);
         } while (llena);
 
-        Ficha ficha = new Ficha(letraFicha);
-        this.tablero.ponerFicha(filaSeleccionada,columnaElegida, ficha);
-
+        Ficha ficha = new Ficha(letraFicha, filaSeleccionada,columnaElegida);
+        this.tablero.ponerFicha(ficha);
+        setFicha(ficha);
+        return ficha;
 
     }
+
+    @Override
+    public void siguienteMovimiento(GestorComandos gestor) {
+
+    }
+
+
 }

@@ -30,7 +30,7 @@ public class Conecta4 {
     }
 
     /**
-     * Inicioaliza los 3 modos de juego y el menú para empezar el juego.
+     * Inicializa los 3 modos de juego y el menú para empezar el juego.
      */
     public void iniciar() {
         List<ModoJuego> modoJuego = new ArrayList<>();
