@@ -1,0 +1,221 @@
+@startuml
+class Arbitro{
+-Tablero tablero;
+-boolean hayGanador;
+
++compruebaGanador()
++compruebaHorizontal()
++compruebaVertical()
++compruebaDiagonal()
+}
+
+class Casillas{
+-Ficha ficha;
+-int fila;
+-int columna;
+-String CASILLAVACIA;
+
++getFicha()
++setFicha()
++getFila()
++getColumna()
++isVacia()
++dibujarCasillas()
+}
+
+interface Comando {
++execute()
++undo()
++redo()
++getName()
+}
+
+class ComandoPonerFicha implements Comando{
+- Jugador jugador;
+-List <Ficha> fichas;
+-Ficha ficha;
+-Ficha borrar;
++execute()
++undo()
++redo()
++getName()
+}
+
+class GestorComandos {
+- GestorComandos gestor;
+- Pila<Comando> pilaundo;
+- Pila<Comando> pilaredo;
+- List<String> historiadecomandos;
++execute()
++undo()
++redo()
++vaciarUndo()
++vaciarRedo()
++getHistoriaComandos()
+}
+
+class Pila <T>{
+-List<T> colecciondatos;
++apilar()
++desapilar()
++isVacia()
++vaciar()
+}
+
+class Ficha {
+- char contenido;
+- int fila;
+- int columna;
+
++getContenido()
++dibujarFicha ()
++getColumna()
++getFila()
+}
+
+abstract class Jugador {
+# String nombreJugador;
+# char letraFicha;
+# Tablero tablero;
+# Ficha ficha;
+
++getNombreJugador()
++getLetraficha()
++getTablero()
++setTablero()
++setFicha()
++getFicha()
++ponerFicha()
++quitarFicha();
++hacerFicha();
++siguienteMovimiento()
+}
+
+class JugadorCPU extends Jugador{
++ponerFicha()
++quitarFicha();
++hacerFicha();
++siguienteMovimiento()
+}
+
+class JugadorPersona extends Jugador{
++ponerFicha()
++quitarFicha();
++hacerFicha();
++siguienteMovimiento()
+}
+
+class Menu{
++ List<ModoJuego> modo;
+- String FIN;
++Scanner teclado;
+
++elegirModo()
++printFinPartida()
+}
+
+interface  ModoJuego{
++jugar()
+}
+
+class ModoBasico implements ModoJuego{
+- Tablero tablero;
+- Arbitro arbitro;
+- Jugador [] jugadores;
+- Turno turno;
+-GestorComandos gestor;
+
++jugar()
++finPartida()
+}
+
+class ModoDemo implements ModoJuego{
+- Tablero tablero;
+- Arbitro arbitro;
+- Jugador [] jugadores;
+- Turno turno;
+-GestorComandos gestor;
+
++jugar()
++cambiarTurno()
++finPartida()
+}
+
+class ModoEntrenamiento  implements ModoJuego{
+- Jugador[] jugadores;
+-  Turno turno;
+- Tablero tablero;
+- Arbitro arbitro;
+-GestorComandos gestor;
+
++jugar()
++cambiarTurno()
++finPartida()
+}
+
+interface  PosicionFicha{
++seleccionaPosicion()
+}
+
+class PosicionCPU implements PosicionFicha{
+- Tablero tablero;
+
++seleccionaPosicion()
++getRandomNumber()
+}
+
+class PosicionPersona   implements PosicionFicha{
+- String jugador;
+- Tablero tableroJuego;
+
++seleccionaPosicion()
++ColumnaPersona()
+}
+
+class Tablero{
++ Casillas[][] casillas;
+- int numfilas;
+- int numcolumnas;
+- int INICIO ;
+- String CADENASEPARADORA;
+- String SEPARADORCOLUMNA;
+
++getNumfilas()
++getNumcolumnas()
++inicializarTablero()
++dibujar()
++dibujarBorde()
++dibujaContenidoCasilla()
++filaFicha()
++columnaLlena()
++ponerFicha()
++quitarFicha()
++tableroLleno()
+}
+
+class Turno{
+- Jugador[] jugadores;
+- int JUGADORINICIAL;
+- int juega;
+
++tieneTurno()
++calculaSiguienteJugador()
++cambiaTurno()
++nombreJugadorConTurno()
+}
+
+class Conecta4 {
+- Tablero tablero;
+- int numcolumnas;
+- int numfilas;
+- int INICIOBUCLE;
+- int NUMJUGADORES;
+- String BIENVENIDA;
+-  Jugador[] jugadores;
+- Arbitro arbitro;
+
++iniciar()
++actualizaTableroEnJugadores ()
++main()
+}
+@enduml
