@@ -1,5 +1,9 @@
 package org.example;
 
+/**
+ * Clase que implementa la interfaz PosicionFicha
+ * para seleccionar la posicion de un jugador CPU.
+ */
 public class PosicionCPU implements PosicionFicha{
 
     private final Tablero tablero;
@@ -8,11 +12,11 @@ public class PosicionCPU implements PosicionFicha{
         this.tablero = tablero;
     }
 
+    /**
+     * @return Metodo que devuelve la columna seleccionada por el jugador CPU.
+     * La colunma se selecciona de forma aleatoria con el método getRandomNumber.
+     */
     public int seleccionaPosicion() {
-        return columnaCPU();
-    }
-
-    public int columnaCPU(){
         boolean llena;
         int columnaElegida = -1;
         do {
@@ -27,9 +31,11 @@ public class PosicionCPU implements PosicionFicha{
         }while (llena);
 
         return columnaElegida;
-
     }
 
+    /**
+     * Método que devuelve un numero aleatorio entre un máximo y un mínimo.
+     */
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }

@@ -16,6 +16,11 @@ public class Conecta4 {
     private  Jugador[] jugadores;
     private Arbitro arbitro;
 
+
+    /**
+     * constructor de la clase, inicializa el tablero y arbitro.
+     * @param jugadores array de jugadores para el juego
+     */
     public Conecta4(Jugador[] jugadores) {
         this.jugadores = jugadores;
         this.tablero = new Tablero(numfilas,numcolumnas);
@@ -23,11 +28,9 @@ public class Conecta4 {
         actualizaTableroEnJugadores(this.tablero);
 
     }
+
     /**
-     * Gestiona el desarrollo de una partida.
-     * Mientras no se dé condición de fin de partida, se pide ficha
-     * al jugador, se dibuja el tablero, se valora el estado de la partida y se cambia de jugador
-     * El juego termina cuando el tablero está lleno o un jugador hace 4 en raya
+     * Inicioaliza los 3 modos de juego y el menú para empezar el juego.
      */
     public void iniciar() {
         List<ModoJuego> modoJuego = new ArrayList<>();

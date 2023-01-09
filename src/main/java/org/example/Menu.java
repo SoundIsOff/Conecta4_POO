@@ -18,7 +18,6 @@ public class Menu {
 
     /**
      * Imprime el menú del juego y permite elegir una opción.
-     * @return devuelve la opción elegida, que es el modo de juego.
      */
     public void elegirModo(){
         int opcion=-1;

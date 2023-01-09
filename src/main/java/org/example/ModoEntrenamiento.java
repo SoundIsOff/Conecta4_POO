@@ -1,5 +1,9 @@
 package org.example;
 
+/**
+ * Clase que implementa la interfaz de ModoJuego,
+ * implementa el modo entrenamiento de juego, en el cual juega un jugador persona contra máquina.
+ */
 public class ModoEntrenamiento implements ModoJuego{
 
     private Jugador[] jugadores;
@@ -8,6 +12,13 @@ public class ModoEntrenamiento implements ModoJuego{
     private Arbitro arbitro;
     GestorComandos gestor = GestorComandos.getInstance();
 
+
+    /**
+     * Constructor de la clase.
+     * Define los jugadores de la partida, un jugadorPersona y un jugadorCPU.
+     * @param arbitro comprueba el ganador de la partida.
+     * @param tablero tablero en el que se desarrolla la partida.
+     */
     public ModoEntrenamiento(Tablero tablero, Arbitro arbitro) {
         this.tablero = tablero;
         this.arbitro = arbitro;
@@ -19,6 +30,9 @@ public class ModoEntrenamiento implements ModoJuego{
         this.turno = new Turno(jugadores);
     }
 
+    /**
+     * Método para el desarrollo de un juego de entrenamiento.
+     */
     public void jugar() {
         Jugador juega = turno.tieneTurno();
         arbitro = new Arbitro(tablero);
@@ -37,10 +51,12 @@ public class ModoEntrenamiento implements ModoJuego{
         } while (!fin);
         tablero.inicializarTablero();
     }
+
     private Jugador cambiarTurno(){
         turno.cambiaTurno();
         return turno.tieneTurno();
     }
+
     private boolean finPartida(Jugador jugador) {
         boolean fin=false;
 

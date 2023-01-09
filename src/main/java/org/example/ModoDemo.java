@@ -1,5 +1,9 @@
 package org.example;
 
+/**
+ * Clase que implementa la interfaz de ModoJuego,
+ * implementa el modo demo de juego, en el cual los dos jugadores son máquina.
+ */
 public class ModoDemo  implements ModoJuego {
     private Tablero tablero;
     private Arbitro arbitro;
@@ -7,6 +11,12 @@ public class ModoDemo  implements ModoJuego {
     private Turno turno;
     private GestorComandos gestor = GestorComandos.getInstance();
 
+    /**
+     * Constructor de la clase.
+     * Define los jugadores de la partida, jugadoresCPU.
+     * @param arbitro comprueba el ganador de la partida.
+     * @param tablero tablero en el que se desarrolla la partida.
+     */
     public ModoDemo(Arbitro arbitro, Tablero tablero) {
         this.arbitro = arbitro;
         this.tablero = tablero;
@@ -19,6 +29,9 @@ public class ModoDemo  implements ModoJuego {
 
     }
 
+    /**
+     * Método para el desarrollo de un juego demo.
+     */
     public void jugar() {
         Jugador juega = jugadores[0];
         arbitro = new Arbitro(tablero);
@@ -40,10 +53,10 @@ public class ModoDemo  implements ModoJuego {
         turno.cambiaTurno();
         return turno.tieneTurno();
     }
+
+
     private boolean finPartida(Jugador jugador) {
         boolean fin=false;
-
-
         if(arbitro.compruebaGanador(jugador.getLetraficha())){
             fin=true;
             System.out.println(jugador.getNombreJugador()+" ha ganado! ");

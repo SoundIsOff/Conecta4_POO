@@ -72,6 +72,9 @@ public class Tablero {
         System.out.println(this.CADENASEPARADORA);
     }
 
+    /**
+     * Método que dibuja el contenido de una casilla.
+     */
     private void dibujaContenidoCasilla(String contenido) {
         System.out.print(this.SEPARADORCOLUMNA + contenido);
     }

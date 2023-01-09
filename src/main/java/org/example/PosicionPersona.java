@@ -3,6 +3,10 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase que implementa la interfaz PosicionFicha
+ * para seleccionar la posicion de un jugador Persona.
+ */
 public class PosicionPersona  implements PosicionFicha{
 
     private final String jugador;
@@ -13,11 +17,19 @@ public class PosicionPersona  implements PosicionFicha{
         this.tableroJuego = tableroJuego;
     }
 
+    /**
+     *Método que devuelve la columa seleccionada por el jugador persona.
+     */
     public int seleccionaPosicion() {
         Scanner scanner = new Scanner(System.in);
         return ColumnaPersona(jugador, scanner);
     }
 
+    /**
+     * Método que olicitado por teclado una columna al jugador y comprueba si el valor es correcto.
+     * @param nombreJugador nombre del jugador en turno.
+     * @return devuelve la columna seleccionada.
+     */
     private int ColumnaPersona( String nombreJugador, Scanner scanner) {
         int columnaElegida = -1;
         boolean correcto = true;
