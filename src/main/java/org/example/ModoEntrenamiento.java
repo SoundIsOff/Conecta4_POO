@@ -6,6 +6,7 @@ public class ModoEntrenamiento implements ModoJuego{
     private  Turno turno;
     private Tablero tablero;
     private Arbitro arbitro;
+    GestorComandos gestor = GestorComandos.getInstance();
 
     public ModoEntrenamiento(Tablero tablero, Arbitro arbitro) {
         this.tablero = tablero;
@@ -24,8 +25,13 @@ public class ModoEntrenamiento implements ModoJuego{
         boolean fin;
         tablero.dibujar();
         do {
-            juega.ponerFicha();
-            tablero.dibujar();
+            juega.hacerFicha();
+            ComandoPonerFicha cPF = new ComandoPonerFicha(juega);
+            gestor.execute(cPF);
+            this.tablero.dibujar();
+
+            juega.siguienteMovimiento(gestor);
+
             fin=finPartida(juega);
             juega = cambiarTurno();
         } while (!fin);

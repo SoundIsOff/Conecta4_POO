@@ -1,10 +1,5 @@
 package org.example;
 
-
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
  * clase que representa el tablero de conecta4
  * la dimensión máxima del tablero es de filaXcolumna
@@ -119,9 +114,13 @@ public class Tablero {
     }
 
 
-   public void ponerFicha(int filaFicha, int filaColumna, Ficha ficha){
-       casillas[filaFicha][filaColumna-1 ].setFicha(ficha);
+   public void ponerFicha(Ficha ficha){
+       casillas[ficha.getFila()][ficha.getColumna()-1 ].setFicha(ficha);
    }
+
+    public void quitarFicha(Ficha ficha){
+        casillas[ficha.getFila()][ficha.getColumna()-1 ].setFicha(null);
+    }
 
     /**
      * Método que comprueba que todas las columna están llenas.

@@ -5,6 +5,7 @@ public class ModoDemo  implements ModoJuego {
     private Arbitro arbitro;
     private Jugador [] jugadores;
     private Turno turno;
+    private GestorComandos gestor = GestorComandos.getInstance();
 
     public ModoDemo(Arbitro arbitro, Tablero tablero) {
         this.arbitro = arbitro;
@@ -24,7 +25,9 @@ public class ModoDemo  implements ModoJuego {
         boolean fin;
         tablero.dibujar();
         do {
-            juega.ponerFicha();
+            juega.hacerFicha();
+            ComandoPonerFicha cPF = new ComandoPonerFicha(juega);
+            gestor.execute(cPF);
             System.out.printf("\nTurno del jugador "+ juega.nombreJugador+"\n");
             tablero.dibujar();
             fin=finPartida(juega);
@@ -32,6 +35,7 @@ public class ModoDemo  implements ModoJuego {
         } while (!fin);
         tablero.inicializarTablero();
     }
+
     private Jugador cambiarTurno(){
         turno.cambiaTurno();
         return turno.tieneTurno();

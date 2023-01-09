@@ -5,13 +5,17 @@ package org.example;
  */
 public class Ficha {
     private final char contenido;
+    private int fila;
+    private int columna;
 
     /**
      * Constructor que crea una ficha con un caracter dado.
      * @param caracter carácter a mostrar en la ficha.
      */
-    public Ficha (char caracter) {
+    public Ficha (char caracter, int fila, int columna) {
         this.contenido = caracter;
+        this.fila=fila;
+        this.columna=columna;
     }
 
     /**
@@ -34,4 +38,10 @@ public class Ficha {
     }
 
 
+    public int getColumna() {
+        return columna;
+    }
+    public int getFila() {
+        return fila;
+    }
 }

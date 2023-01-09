@@ -1,10 +1,15 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class ModoBasico implements ModoJuego{
     private Tablero tablero;
     private Arbitro arbitro;
     private Jugador [] jugadores;
     private Turno turno;
+    private Scanner scanner = new Scanner(System.in);
+    private GestorComandos gestor = GestorComandos.getInstance();
+
 
     public ModoBasico(Arbitro arbitro, Jugador[] jugadores, Tablero tablero) {
         this.arbitro = arbitro;
@@ -18,8 +23,13 @@ public class ModoBasico implements ModoJuego{
         boolean finPartida;
         tablero.dibujar();
         do {
-            juega.ponerFicha();
-            tablero.dibujar();
+            juega.hacerFicha();
+            ComandoPonerFicha cPF = new ComandoPonerFicha(juega);
+            gestor.execute(cPF);
+            this.tablero.dibujar();
+
+            juega.siguienteMovimiento(gestor);
+
             finPartida=finPartida(juega);
             juega = turno.cambiarTurno();
         } while (!finPartida);
