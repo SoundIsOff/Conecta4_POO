@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -75,31 +76,39 @@ public class ModoEntrenamiento implements ModoJuego{
     private void siguienteMovimiento(Jugador jugador) {
         Scanner scanner = new Scanner(System.in);
         int opcion;
+        try {
+            System.out.println("1. Deshacer movimiento\n2. Terminar turno");
+            do {
+                opcion = scanner.nextInt();
+            } while (opcion < 1 || opcion > 2);
 
-        System.out.println("1. Deshacer movimiento\n2. Terminar turno");
-        do{
-            opcion=scanner.nextInt();
-        }while (opcion<1 || opcion>2);
-
-        if(opcion==1){
-            gestor.undo();
-            tablero.dibujar();
-            System.out.println("1. Poner nueva ficha\n2. Rehacer movimiento");
-            do{
-                opcion=scanner.nextInt();
-            }while (opcion<1 || opcion>2);
-            if(opcion==1) {
-                jugador.ponerFicha(jugador.hacerFicha());
+            if (opcion == 1) {
+                gestor.undo();
+                tablero.dibujar();
+                System.out.println("1. Poner nueva ficha\n2. Rehacer movimiento");
+                do {
+                    opcion = scanner.nextInt();
+                } while (opcion < 1 || opcion > 2);
+                if (opcion == 1) {
+                    jugador.ponerFicha(jugador.hacerFicha());
+                } else {
+                    gestor.redo();
+                }
+                tablero.dibujar();
             }
-            else {
-                gestor.redo();
-            }
-            tablero.dibujar();
+        }
+        catch (InputMismatchException exception) {
+            System.out.println("Valor no valido");
+            scanner.next();
+        }
+        finally {
+            gestor.vaciarUndo();
+            gestor.vaciarRedo();
         }
 
-        gestor.vaciarUndo();
-        gestor.vaciarRedo();
 
     }
+
+
 
 }

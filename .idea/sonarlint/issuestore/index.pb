@@ -3,8 +3,6 @@ V
 &src/main/java/org/example/Arbitro.java,b\f\bfe2d187ba75ba9504124e932218ba5f3c9c495e
 W
 'src/main/java/org/example/Casillas.java,e\a\ea62a1f766cc6d3e0a86f9e61d54d7105743e96a
-S
-#src/main/java/org/example/Menu.java,1\f\1f61a3a46f026d15105a13d65465c5466518fc1e
 Z
 *src/main/java/org/example/PosicionCPU.java,e\a\eac8e9df8db3176123817a91115627e3fa26bf77
 \

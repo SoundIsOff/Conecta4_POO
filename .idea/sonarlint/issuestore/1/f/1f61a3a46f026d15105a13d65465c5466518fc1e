@@ -1,18 +1,0 @@
-
-m
-java:S1104"PMake modo a static final constant or non-public and provide accessors if needed.(†Ðüñ8ú¶Çä×0
-n
-java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(í ìÚ8ò¸Çä×0
-B
-java:S3457"%String contains no format specifiers.(í ìÚ8ò¸Çä×0
-U	java:S106"9Replace this use of System.out or System.err by a logger.(í ìÚ8ò¸Çä×0
-^
-java:S3457"AFormat specifiers should be used instead of string concatenation.(»»½ç8ó¸Çä×0
-U	java:S106"9Replace this use of System.out or System.err by a logger.(»»½ç8ó¸Çä×0
-U	java:S106 "9Replace this use of System.out or System.err by a logger.(ë…¦Ô8ô¸Çä×0
-Z	java:S106$"9Replace this use of System.out or System.err by a logger.(“˜ÌÊÿÿÿÿÿ8õ¸Çä×0
-Z	java:S106("9Replace this use of System.out or System.err by a logger.(”ŽÌäÿÿÿÿÿ8õ¸Çä×0
-B
-java:S3457+"%String contains no format specifiers.(Þ«ŠÉ8ö¸Çä×0
-U	java:S106+"9Replace this use of System.out or System.err by a logger.(Þ«ŠÉ8ö¸Çä×0
-Z	java:S1062"9Replace this use of System.out or System.err by a logger.(óû¥½ýÿÿÿÿ8÷¸Çä×0
