@@ -1,0 +1,15 @@
+
+o
+java:S1104	"TMake casillas a static final constant or non-public and provide accessors if needed.(â“†ğüÿÿÿÿ
+k	java:S116"QRename this field "INICIO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍßÁÒøÿÿÿÿ
+u	java:S116"[Rename this field "CADENASEPARADORA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µä¡üÿÿÿÿ
+p	java:S116"[Rename this field "SEPARADORCOLUMNA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÔƒñ
+<
+java:S1170"!Make this final field static too.(ÍßÁÒøÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(µä¡üÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(ŠÔƒñ
+N	java:S106H"9Replace this use of System.out or System.err by a logger.(äÃÀ›
+N	java:S106O"9Replace this use of System.out or System.err by a logger.(¬ˆÀÀ
+S	java:S106V"9Replace this use of System.out or System.err by a logger.(æÊ•úÿÿÿÿ

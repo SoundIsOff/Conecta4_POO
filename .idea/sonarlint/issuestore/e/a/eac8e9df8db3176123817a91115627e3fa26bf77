@@ -1,0 +1,7 @@
+
+_
+java:S1854"=Remove this useless assignment to local variable "filaFicha".(ÔÜ©‚üÿÿÿÿ8ôâÌÆØ0
+P
+java:S1481".Remove this unused "filaFicha" local variable.(î²„·úÿÿÿÿ8õâÌÆØ0
+D
+java:S2140(")Use "java.util.Random.nextInt()" instead.(¶ëÂñøÿÿÿÿ
